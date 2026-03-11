@@ -163,12 +163,21 @@ Miguel Ángel Martín Mesa
 Computer Engineering Student
 UNIE University
 
+Areas of interest:
+
+* Software Engineering
+* System Architecture
+* Technical Documentation
+* Professional Knowledge Systems
+
 This repository is part of a broader effort to build a **professional digital ecosystem**, including:
 
 * LinkedIn professional presence
 * GitHub technical portfolio
 * Personal website (in development)
 * Technical documentation projects
+
+Contact Info: https://linktr.ee/miguelmmesa
 
 ---
 
