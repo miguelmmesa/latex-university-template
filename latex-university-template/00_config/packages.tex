@@ -1,0 +1,122 @@
+% =====================================================
+% IDIOMA Y CODIFICACIÓN
+% =====================================================
+
+\usepackage[spanish]{babel}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage[T1]{fontenc}
+
+% =====================================================
+% IMAGEN OVERLAY
+% =====================================================
+
+
+\usepackage{tikz}
+
+
+% =====================================================
+% MATEMÁTICAS
+% =====================================================
+
+\usepackage{amsmath}
+
+
+% =====================================================
+% GRÁFICOS Y TABLAS
+% =====================================================
+
+\usepackage{graphicx}
+
+\usepackage{booktabs}
+
+
+% =====================================================
+% CITAS Y BIBLIOGRAFÍA APA
+% =====================================================
+
+\usepackage{csquotes}
+
+\usepackage[
+backend=biber,
+style=apa,
+sorting=nyt
+]{biblatex}
+
+\DeclareLanguageMapping{spanish}{spanish-apa}
+
+\addbibresource{05_bibliography/references.bib}
+
+
+% =====================================================
+% CÓDIGO FUENTE
+% =====================================================
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Cambiar nombres del entorno listings
+\renewcommand{\lstlistingname}{Código}
+\renewcommand{\lstlistlistingname}{Lista de códigos}
+
+% =====================================================
+% ALGORITMOS
+% =====================================================
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% Cambiar nombres del entorno algoritmos
+\floatname{algorithm}{Algoritmo}
+\renewcommand{\listalgorithmname}{Lista de algoritmos}
+
+
+% =====================================================
+% FIGURAS
+% =====================================================
+
+\usepackage{caption}
+
+\captionsetup{
+    font=small,
+    labelfont=bf,
+    labelsep=period
+}
+
+
+% =====================================================
+% ACRÓNIMOS
+% =====================================================
+
+\usepackage{acro}
+
+\acsetup{
+    first-style = long-short,
+    list/name = Lista de Acrónimos
+}
+
+
+% =====================================================
+% HIPERVÍNCULOS
+% =====================================================
+
+\usepackage{hyperref}
+
+\hypersetup{
+    pdftitle={\documenttitle},
+    pdfauthor={\documentauthor},
+    pdfsubject={Trabajo Fin de Grado},
+    pdfkeywords={TFG, investigación},
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=blue
+}
+
+
+% =====================================================
+% REFERENCIAS INTELIGENTES
+% =====================================================
+
+\usepackage{cleveref}

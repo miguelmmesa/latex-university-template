@@ -1,0 +1,40 @@
+\chapter{Estructura del proyecto}
+
+La plantilla está organizada en varias carpetas que separan la configuración del
+documento del contenido académico.
+
+\section{Estructura general}
+
+La estructura del proyecto es la siguiente:
+
+\begin{lstlisting}[language=TeX,caption={Estructura del proyecto}]
+main.tex
+
+00_config/
+01_frontmatter/
+02_chapters/
+03_figures/
+04_tables/
+05_bibliography/
+06_appendices/
+07_styles/
+08_acronyms/
+\end{lstlisting}
+
+Cada carpeta tiene una función específica dentro del proyecto.
+
+\section{Archivo principal}
+
+El archivo principal del documento es:
+
+\begin{lstlisting}[language=TeX,caption={Archivo principal del proyecto}]
+main.tex
+\end{lstlisting}
+
+Este archivo controla la estructura general del documento e incluye
+los distintos capítulos del trabajo mediante el comando:
+
+\begin{lstlisting}[language=TeX,caption={Carga de capítulos en main.tex}]
+\input{02_chapters/chapter01}
+\input{02_chapters/chapter02}
+\end{lstlisting}

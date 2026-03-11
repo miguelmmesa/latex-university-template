@@ -1,0 +1,40 @@
+\chapter{Figuras y tablas}
+
+\section{Inserción de figuras}
+
+Las figuras se insertan utilizando el entorno \texttt{figure}.
+
+
+
+\begin{lstlisting}[language=TeX,caption={Inserción de una figura}]
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{03_figures/ejemplo}
+\caption{Ejemplo de figura}
+\label{fig:ejemplo}
+\end{figure}
+\end{lstlisting}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{03_figures/borrador.png}
+\caption{Ejemplo de figura dentro del documento}
+\label{fig:demo}
+\end{figure}
+
+\clearpage
+
+\section{Inserción de tablas}
+
+Las tablas se insertan utilizando el entorno \texttt{table}.
+
+\begin{lstlisting}[language=TeX,caption={Ejemplo de tabla}]
+\begin{table}[h]
+\centering
+\begin{tabular}{cc}
+Dato 1 & Dato 2 \\
+Dato 3 & Dato 4
+\end{tabular}
+\caption{Ejemplo de tabla}
+\end{table}
+\end{lstlisting}

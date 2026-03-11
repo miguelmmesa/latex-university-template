@@ -1,0 +1,37 @@
+\chapter{Acrónimos y citas}
+
+\section{Acrónimos}
+
+Los acrónimos se gestionan mediante el paquete \texttt{acro}.
+
+Por ejemplo, el acrónimo \ac{api} se expande automáticamente la primera vez
+que aparece en el texto.
+
+Esto sucede porque se inserta el código:
+\begin{lstlisting}[language=TeX,caption={Ejemplo nuevo acrónimo}]
+\DeclareAcronym{api}{
+    short = API ,
+    long  = Application Programming Interface 
+}
+\end{lstlisting} 
+
+en la carpeta: 
+\begin{lstlisting}[language=TeX,caption={Carpeta Acrónimos}]
+\08_acronyms 
+\end{lstlisting}
+
+\section{Citas bibliográficas}
+
+Las referencias bibliográficas se gestionan mediante \texttt{biblatex}.
+
+Ejemplo de cita narrativa:
+
+\begin{lstlisting}[language=TeX,caption={Cita narrativa}]
+\textcite{knuth1984}
+\end{lstlisting}
+
+Ejemplo de cita parentética:
+
+\begin{lstlisting}[language=TeX,caption={Cita parentética}]
+\parencite{knuth1984}
+\end{lstlisting}

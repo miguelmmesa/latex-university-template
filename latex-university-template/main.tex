@@ -1,0 +1,136 @@
+\documentclass[12pt,a4paper,openright]{report}
+
+% =========================
+% CONFIGURACIÓN GENERAL
+% =========================
+
+\input{00_config/config}
+\input{00_config/packages}
+
+% =========================
+% ESTILOS DEL DOCUMENTO
+% =========================
+
+\input{07_styles/typography}
+\input{07_styles/page_layout}
+\input{07_styles/headings}
+\input{07_styles/figures_tables}
+\input{07_styles/code_style}
+
+% =========================
+% ACRÓNIMOS
+% =========================
+
+\input{08_acronyms/acronyms}
+
+% =========================
+% INICIO DEL DOCUMENTO
+% =========================
+
+\begin{document}
+
+
+% == Portada ==============
+\input{01_frontmatter/cover}
+\cleardoublepage
+
+% =========================
+% FRONTMATTER
+% =========================
+
+\pagenumbering{roman}
+
+% Activar según necesidades del trabajo
+% -------------------------------------
+
+% == Dedicación ===========
+%\input{01_frontmatter/dedication}
+%\cleardoublepage
+
+% == Reconocimientos ======
+%\input{01_frontmatter/acknowledgements}
+%\cleardoublepage
+
+% == Resumen ==============
+%\input{01_frontmatter/resumen}
+%\cleardoublepage
+
+% == Abstract =============
+%\input{01_frontmatter/abstract}
+%\cleardoublepage
+
+% -------------------------------------
+
+% =========================
+% ÍNDICES
+% =========================
+
+
+% == Índice ===============
+\tableofcontents
+\cleardoublepage
+
+% == Listado Figuras ======
+\listoffigures
+\cleardoublepage
+
+% == Listado Tablas =======
+\listoftables
+\cleardoublepage
+
+% == Listado Código =======
+\lstlistoflistings
+\cleardoublepage
+
+% == Listado Algoritmos ===
+\listofalgorithms
+\cleardoublepage
+
+% == Listado Acrónimos ====
+\printacronyms
+\cleardoublepage
+
+
+% =========================
+% MAINMATTER
+% =========================
+
+\pagenumbering{arabic}
+
+\input{02_chapters/chapter01}
+\cleardoublepage
+
+\input{02_chapters/chapter02}
+\cleardoublepage
+
+\input{02_chapters/chapter03}
+\cleardoublepage
+
+\input{02_chapters/chapter04}
+\cleardoublepage
+
+\input{02_chapters/chapter05}
+\cleardoublepage
+
+\input{02_chapters/chapter06}
+\cleardoublepage
+
+\input{02_chapters/chapter07}
+\cleardoublepage
+
+% =========================
+% BIBLIOGRAFÍA
+% =========================
+
+\printbibliography
+\cleardoublepage
+
+% =========================
+% ANEXOS
+% =========================
+
+\appendix
+
+\input{06_appendices/appendixA}
+
+\end{document}

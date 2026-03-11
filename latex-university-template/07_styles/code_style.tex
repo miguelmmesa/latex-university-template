@@ -1,0 +1,36 @@
+% =====================================================
+% ESTILO PARA CÓDIGO
+% =====================================================
+
+\lstdefinestyle{code}{
+    backgroundcolor=\color{gray!5},
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{green!50!black},
+    numbers=left,
+    numberstyle=\tiny,
+    stepnumber=1,
+    numbersep=10pt,
+    frame=single,
+    breaklines=true,
+    tabsize=2,
+    captionpos=b
+}
+
+% =====================================================
+% LENGUAJE LATEX PARA LISTINGS
+% =====================================================
+
+\lstdefinelanguage{TeX}{
+  morekeywords={documentclass,usepackage,begin,end,chapter,section,subsection,caption,label,includegraphics},
+  sensitive=true,
+  morecomment=[l]{\%},
+  morestring=[b]"
+}
+
+% =====================================================
+% CONFIGURACIÓN GLOBAL
+% =====================================================
+
+\lstset{style=code}

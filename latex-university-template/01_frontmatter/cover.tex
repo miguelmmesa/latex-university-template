@@ -1,0 +1,79 @@
+\begin{titlepage}
+
+% =========================
+% IMAGEN DECORATIVA FONDO
+% =========================
+
+\begin{tikzpicture}[remember picture,overlay]
+\node[opacity=0.4,anchor=south east] 
+at (current page.south east)
+{\includegraphics[width=12.5cm]{03_figures/logos/logo_overlay.png}};
+\end{tikzpicture}
+
+\begin{center}
+
+% =========================
+% LOGO UNIVERSIDAD
+% =========================
+
+\includegraphics[width=4.5cm]{03_figures/logos/logo_UNIE.png}
+
+\vspace{1.2cm}
+
+% =========================
+% UNIVERSIDAD
+% =========================
+
+{\Large \textbf{\university}}
+
+\vspace{0.4cm}
+
+{\large \faculty}
+
+\vspace{0.4cm}
+
+{\large \degree}
+
+\vspace{2.2cm}
+
+% =========================
+% TÍTULO DEL TRABAJO
+% =========================
+
+\rule{\textwidth}{0.6pt}
+
+\vspace{0.6cm}
+
+{\Huge \textbf{\documenttitle}}
+
+\vspace{0.6cm}
+
+\rule{\textwidth}{0.6pt}
+
+\vspace{2.5cm}
+
+% =========================
+% INFORMACIÓN DEL TRABAJO
+% =========================
+
+\begin{tabular}{rl}
+\textbf{Autor:} & \documentauthor \\
+\\
+\textbf{Tutor:} & \supervisor \\
+\\
+\textbf{Departamento:} & \department \\
+\\
+\textbf{Curso académico:} & \academicyear
+\end{tabular}
+
+\vfill
+
+% =========================
+% FECHA
+% =========================
+
+{\large \submissiondate}
+
+\end{center}
+
+\end{titlepage}
