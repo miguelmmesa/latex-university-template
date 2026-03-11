@@ -132,7 +132,7 @@ Overleaf will recreate the entire folder structure automatically.
 
 You can preview the generated document here:
 
-[View Example PDF](example.pdf)
+[View Example PDF](latex-template-example.pdf)
 
 This template generates professional academic documents with:
 
