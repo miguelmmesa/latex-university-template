@@ -1,5 +1,12 @@
 # UNIE LaTeX Academic Template
 
+![GitHub repo size](https://img.shields.io/github/repo-size/miguelmmesa/latex-university-template)
+![GitHub last commit](https://img.shields.io/github/last-commit/miguelmmesa/latex-university-template)
+![GitHub license](https://img.shields.io/github/license/miguelmmesa/latex-university-template)
+![LaTeX](https://img.shields.io/badge/Built%20with-LaTeX-blue)
+![Academic Template](https://img.shields.io/badge/Template-Academic%20Writing-green)
+
+
 Professional modular LaTeX template designed for academic writing such as:
 
 * University reports
