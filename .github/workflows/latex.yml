@@ -16,10 +16,11 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: latex-university-template/main.tex
+          root_file: main.tex
+          working_directory: latex-university-template
 
       - name: Upload PDF
         uses: actions/upload-artifact@v4
         with:
           name: compiled-pdf
-          path: main.pdf
+          path: latex-university-template/main.pdf
