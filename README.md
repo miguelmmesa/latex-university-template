@@ -1,5 +1,10 @@
 # UNIE LaTeX Academic Template
 
+# Preview
+
+![Template Preview](assets/preview.png)
+
+
 ![GitHub repo size](https://img.shields.io/github/repo-size/miguelmmesa/latex-university-template)
 ![GitHub last commit](https://img.shields.io/github/last-commit/miguelmmesa/latex-university-template)
 ![GitHub license](https://img.shields.io/github/license/miguelmmesa/latex-university-template)
