@@ -151,6 +151,16 @@ Overleaf will recreate the full project structure automatically.
 
 ---
 
+# Example Output
+# Continuous Compilation
+
+You can preview the generated document here:
+This repository includes **GitHub Actions** that automatically compile the LaTeX document.
+
+[View Example PDF](latex-template-example.pdf)
+
+---
+
 # Continuous Compilation
 
 This repository includes **GitHub Actions** that automatically compile the LaTeX document.
