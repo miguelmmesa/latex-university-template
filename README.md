@@ -157,7 +157,7 @@ Overleaf will recreate the full project structure automatically.
 You can preview the generated document here:
 This repository includes **GitHub Actions** that automatically compile the LaTeX document.
 
-[View Example PDF](latex-template-example.pdf)
+[View Example PDF](latex-university-template.pdf)
 
 ---
 
