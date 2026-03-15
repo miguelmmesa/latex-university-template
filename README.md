@@ -6,47 +6,51 @@
 ![LaTeX](https://img.shields.io/badge/Built%20with-LaTeX-blue)
 ![Academic Template](https://img.shields.io/badge/Template-Academic%20Writing-green)
 
-Professional **modular LaTeX template** designed for academic writing such as:
+Professional **modular LaTeX template** designed for academic and technical writing.
 
-* University reports
-* Technical documentation
-* Final Degree Projects (TFG)
-* Research papers
-* Engineering documentation
+It provides a **clean architecture separating configuration, structure, and content**, allowing the author to focus entirely on writing.
 
-The template has been designed to **separate structure, content, and style**, allowing the author to focus entirely on writing.
+Suitable for:
+
+• University reports  
+• Technical documentation  
+• Final Degree Projects (TFG)  
+• Research papers  
+• Engineering documentation  
 
 ---
 
-# Use this Template
+# Preview
 
-You can use this repository as a starting point for your own academic projects.
+Example document generated with the template:
 
-1. Click the **Use this template** button at the top of the repository.
-2. Create your own copy of the project.
-3. Start writing immediately.
+📄 **Preview PDF**
 
-This allows you to reuse the entire structure without modifying the original repository.
+[View Example Document](latex-template-example.pdf)
 
 ---
 
 # Features
 
-* Institutional academic cover
-* Modular project architecture
-* Automatic table of contents
-* Lists of figures, tables, code and algorithms
-* Professional typography
-* Bibliography with BibLaTeX (APA style)
-* Acronym management
-* Code and algorithm environments
-* Ready for GitHub + Overleaf workflows
+• Institutional academic cover  
+• Modular project architecture  
+• Automatic table of contents  
+• Lists of figures, tables, code and algorithms  
+• Professional typography  
+• Bibliography with BibLaTeX (APA style)  
+• Acronym management  
+• Code listings with syntax highlighting  
+• Algorithm environments  
+• Documentation blocks (definitions, notes, warnings, examples)  
+• Draft / Final build modes  
+• Ready for GitHub + Overleaf workflows  
 
 ---
 
-# Project Structure
+# Architecture
 
-```
+The template follows a **modular architecture inspired by software engineering practices**.
+
 latex-university-template/
 
 main.tex
@@ -55,26 +59,45 @@ main.tex
 01_frontmatter/
 02_chapters/
 03_figures/
-04_tables/
-05_bibliography/
-06_appendices/
-07_styles/
-08_acronyms/
-```
+04_bibliography/
+05_appendices/
+06_styles/
+07_acronyms/
 
-### Folder purpose
 
-| Folder          | Purpose                           |
-| --------------- | --------------------------------- |
-| 00_config       | Global configuration and packages |
-| 01_frontmatter  | Cover page, dedication, abstract  |
-| 02_chapters     | Main document chapters            |
-| 03_figures      | Images and logos                  |
-| 04_tables       | Tables                            |
-| 05_bibliography | References (.bib)                 |
-| 06_appendices   | Appendices                        |
-| 07_styles       | Typography and document style     |
-| 08_acronyms     | Acronym definitions               |
+| Folder | Purpose |
+|------|------|
+| `00_config` | Global configuration and packages |
+| `01_frontmatter` | Cover, dedication, abstracts |
+| `02_chapters` | Main document content |
+| `03_figures` | Images and diagrams |
+| `04_bibliography` | BibLaTeX reference database |
+| `05_appendices` | Document appendices |
+| `06_styles` | Typography and layout styles |
+| `07_acronyms` | Acronym definitions |
+
+This architecture ensures **clear separation of responsibilities** between document structure, configuration and content.
+
+---
+
+# Documentation
+
+The template includes **integrated documentation explaining the architecture and usage**.
+
+The generated document includes chapters such as:
+
+• Introduction  
+• Project Architecture  
+• Writing Content  
+• High-Level Floats  
+• Code and Algorithms  
+• Acronyms and Bibliography  
+• Documentation Environments  
+• Build Modes  
+• Usage Guide  
+• Best Practices  
+
+This makes the repository not only a template but also a **learning resource for structured LaTeX projects**.
 
 ---
 
@@ -82,102 +105,84 @@ main.tex
 
 Clone the repository:
 
-```
 git clone https://github.com/miguelmmesa/latex-university-template.git
-```
+
 
 Open the project with:
 
-* **Overleaf**
-* **VSCode + LaTeX Workshop**
-* **TeXStudio**
-* **TeXmaker**
+• Overleaf  
+• VSCode + LaTeX Workshop  
+• TeXStudio  
+• TeXmaker  
 
 Edit the configuration file:
 
-```
 00_config/config.tex
-```
 
-Here you can configure:
 
-* author
-* title
-* supervisor
-* university
-* academic year
+Configure:
 
-Write the document inside:
+• title  
+• author  
+• supervisor  
+• university  
+• academic year  
 
-```
+Write your document inside:
+
 02_chapters/
-```
+
 
 ---
 
 # Open in Overleaf
 
-You can easily use this template in Overleaf.
+1. Download the repository as a ZIP file  
+2. Open **Overleaf**  
+3. Click **New Project → Upload Project**  
+4. Upload the ZIP file  
 
-1. Download the repository as a ZIP file.
-2. Go to **Overleaf**.
-3. Click **New Project → Upload Project**.
-4. Upload the ZIP file.
-
-Overleaf will recreate the entire folder structure automatically.
-
----
-
-# Example Output
-
-You can preview the generated document here:
-
-[View Example PDF](latex-template-example.pdf)
-
-This template generates professional academic documents with:
-
-* consistent formatting
-* institutional structure
-* automatic references
-* structured chapters and sections
+Overleaf will recreate the full project structure automatically.
 
 ---
 
 # Continuous Compilation
 
-This repository includes **GitHub Actions** to automatically compile the LaTeX document.
+This repository includes **GitHub Actions** that automatically compile the LaTeX document.
 
-Each time a change is pushed to the repository, GitHub will:
+Every push will:
 
-1. Compile the LaTeX project
-2. Generate the PDF
-3. Upload it as a downloadable artifact
+1. Compile the LaTeX project  
+2. Generate the PDF  
+3. Upload the compiled document as an artifact
 
-You can view the compilation results in the **Actions** tab.
+Results can be viewed in the **Actions** tab.
 
 ---
 
 # Author
 
-Miguel Ángel Martín Mesa
-Computer Engineering Student
+Miguel Ángel Martín Mesa  
+Computer Engineering Student  
 UNIE University
 
 Areas of interest:
 
-* Software Engineering
-* System Architecture
-* Technical Documentation
-* Professional Knowledge Systems
+• Software Engineering  
+• System Architecture  
+• Technical Documentation  
+• Knowledge Systems  
 
-This repository is part of a broader effort to build a **professional digital ecosystem**, including:
+This repository is part of a broader effort to build a **professional technical portfolio** including:
 
-* LinkedIn professional presence
-* GitHub technical portfolio
-* Personal website (in development)
-* Technical documentation projects
+• GitHub engineering projects  
+• Technical documentation systems  
+• Knowledge architecture  
+• Academic infrastructure tools  
 
-Contact Info: https://linktr.ee/miguelmmesa
+Contact:
+
+https://linktr.ee/miguelmmesa
 
 ---
 
