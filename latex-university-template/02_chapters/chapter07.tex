@@ -1,26 +1,197 @@
-\chapter{Buenas prácticas}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FILE: chapter07_documentation_environments.tex
+%
+% PURPOSE
+% -------------------------------------------------------
+% Explains the documentation environments provided
+% by the template.
+%
+%
+% ARCHITECTURE ROLE
+% -------------------------------------------------------
+% User guide chapter.
+%
+% Documents the visual documentation boxes used to
+% highlight definitions, notes, warnings and examples.
+%
+%
+% DEPENDENCIES
+% -------------------------------------------------------
+% environments.tex
+% tcolorbox
+%
+%
+% NOTES FOR DEVELOPERS
+% -------------------------------------------------------
+% If the documentation environments change,
+% this chapter must be updated.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Se recomienda seguir las siguientes prácticas al utilizar la plantilla.
 
-\section{Organización del proyecto}
+\chapter{Entornos de documentación}
 
-Mantener los archivos organizados por carpetas:
+La plantilla incluye entornos visuales diseñados para
+resaltar información importante dentro del documento.
+
+Estos entornos están inspirados en sistemas modernos
+de documentación técnica.
+
+
+
+% --------------------------------------------------
+% CONCEPTO DE BLOQUE DE DOCUMENTACIÓN
+% --------------------------------------------------
+
+\section{Concepto de bloque de documentación}
+
+\begin{definitionbox}[Bloque de documentación]
+Un bloque de documentación es un elemento visual
+destinado a resaltar información importante dentro
+de un texto técnico.
+\end{definitionbox}
+
+Este tipo de bloques mejora la claridad del documento
+y facilita la lectura.
+
+
+
+% --------------------------------------------------
+% DEFINITION BOX
+% --------------------------------------------------
+
+\section{DefinitionBox}
+
+El entorno \texttt{definitionbox} se utiliza para
+definir conceptos importantes.
+
+\begin{lstlisting}[caption={Uso de definitionbox},label={code:defbox}]
+\begin{definitionbox}[Concepto]
+Contenido de la definicion
+\end{definitionbox}
+\end{lstlisting}
+
+\source{Plantilla}
+
+
+
+Ejemplo real:
+
+\begin{definitionbox}[Compilación]
+La compilación es el proceso mediante el cual
+\LaTeX{} transforma el código fuente del documento
+en un archivo PDF final.
+\end{definitionbox}
+
+
+
+% --------------------------------------------------
+% NOTE BOX
+% --------------------------------------------------
+
+\section{NoteBox}
+
+El entorno \texttt{notebox} se utiliza para añadir
+aclaraciones o información adicional.
+
+\begin{lstlisting}[caption={Uso de notebox},label={code:notebox}]
+\begin{notebox}
+Contenido de la nota
+\end{notebox}
+\end{lstlisting}
+
+\source{Plantilla}
+
+
+
+Ejemplo:
+
+\begin{notebox}
+Los bloques de documentación ayudan a mejorar la
+legibilidad del documento y a destacar información
+relevante.
+\end{notebox}
+
+
+
+% --------------------------------------------------
+% WARNING BOX
+% --------------------------------------------------
+
+\section{WarningBox}
+
+El entorno \texttt{warningbox} se utiliza para
+advertencias importantes.
+
+\begin{lstlisting}[caption={Uso de warningbox},label={code:warningbox}]
+\begin{warningbox}
+Mensaje de advertencia
+\end{warningbox}
+\end{lstlisting}
+
+\source{Plantilla}
+
+
+
+Ejemplo:
+
+\begin{warningbox}
+Modificar los archivos dentro de la carpeta
+\texttt{00\_config} sin comprender su función
+puede provocar errores de compilación.
+\end{warningbox}
+
+
+
+% --------------------------------------------------
+% EXAMPLE BOX
+% --------------------------------------------------
+
+\section{ExampleBox}
+
+El entorno \texttt{examplebox} se utiliza para
+mostrar ejemplos prácticos.
+
+\begin{lstlisting}[caption={Uso de examplebox},label={code:examplebox}]
+\begin{examplebox}
+Contenido del ejemplo
+\end{examplebox}
+\end{lstlisting}
+
+\source{Plantilla}
+
+
+
+Ejemplo:
+
+\begin{examplebox}
+Un documento técnico puede utilizar bloques de
+definición para explicar conceptos clave antes
+de introducir ejemplos prácticos.
+\end{examplebox}
+
+
+
+% --------------------------------------------------
+% VENTAJAS DE LOS BLOQUES
+% --------------------------------------------------
+
+\section{Ventajas}
+
+El uso de estos entornos proporciona varias ventajas.
 
 \begin{itemize}
-\item Figuras en \texttt{03\_figures}
-\item Bibliografía en \texttt{05\_bibliography}
-\item Apéndices en \texttt{06\_appendices}
+
+\item mejora la claridad del documento
+\item permite destacar información importante
+\item facilita la lectura de documentos largos
+\item aporta una estética moderna
+
 \end{itemize}
 
-\section{Separación entre contenido y formato}
 
-El contenido debe escribirse exclusivamente en la carpeta:
 
-\texttt{02\_chapters}
-
-La configuración del documento se gestiona en:
-
-\texttt{00\_config} y \texttt{07\_styles}
-
-Esta separación permite modificar el estilo del documento sin alterar
-el contenido del trabajo.
+\begin{notebox}
+Estos bloques son especialmente útiles en documentos
+docentes, manuales técnicos y material de formación.
+\end{notebox}

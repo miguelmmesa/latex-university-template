@@ -1,0 +1,164 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FILE: environments.tex
+%
+% PURPOSE
+% -------------------------------------------------------
+% Defines reusable environments and macros used
+% throughout the document.
+%
+% Includes two categories:
+%
+% 1. Float wrappers
+%    Simplified commands for inserting figures,
+%    tables and algorithms.
+%
+% 2. Documentation boxes
+%    Visual blocks for definitions, notes,
+%    warnings and examples.
+%
+% 3. Code blocks
+%    Safe environment wrapper around lstlisting.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% ==================================================
+% FLOAT WRAPPERS
+% ==================================================
+
+% --------------------------------------------------
+% FIGURE
+% --------------------------------------------------
+
+\newcommand{\figura}[4]{
+\begin{figure}[H]
+\centering
+\includegraphics[width=\defaultfigurewidth]{#1}
+\caption{#2}
+\label{fig:#4}
+\source{#3}
+\end{figure}
+}
+
+% Usage:
+% \figura{path}{caption}{source}{label}
+
+
+
+% --------------------------------------------------
+% TABLE
+% --------------------------------------------------
+
+\newcommand{\tabla}[4]{
+\begin{table}[H]
+\centering
+\caption{#2}
+\label{tab:#4}
+#1
+\source{#3}
+\end{table}
+}
+
+% Usage:
+% \tabla{table code}{caption}{source}{label}
+
+
+
+% --------------------------------------------------
+% ALGORITHM
+% --------------------------------------------------
+
+\newcommand{\algoritmo}[4]{
+\begin{algorithm}[H]
+\caption{#2}
+\label{alg:#4}
+#1
+\source{#3}
+\end{algorithm}
+}
+
+% Usage:
+% \algoritmo{content}{caption}{source}{label}
+
+
+
+% ==================================================
+% DOCUMENTATION BOXES
+% ==================================================
+%
+% Inspired by modern documentation systems such as
+% Rust documentation, Python docs and MkDocs.
+%
+
+% --------------------------------------------------
+% BASE STYLE
+% --------------------------------------------------
+
+\tcbset{
+    docbox/.style={
+        enhanced,
+        colback=white,
+        colframe=black,
+        boxrule=0.6pt,
+        arc=2pt,
+        left=6pt,
+        right=6pt,
+        top=6pt,
+        bottom=6pt,
+        fonttitle=\bfseries,
+        coltitle=black
+    }
+}
+
+
+
+% --------------------------------------------------
+% DEFINITION
+% --------------------------------------------------
+
+\newtcolorbox{definitionbox}[1][]{
+    docbox,
+    title={Definición: #1},
+    colback=blue!5,
+    colframe=blue!100!black
+}
+
+
+
+% --------------------------------------------------
+% NOTE
+% --------------------------------------------------
+
+\newtcolorbox{notebox}{
+    docbox,
+    title={Nota},
+    colback=gray!5,
+    colframe=gray!60
+}
+
+
+
+% --------------------------------------------------
+% WARNING
+% --------------------------------------------------
+
+\newtcolorbox{warningbox}{
+    docbox,
+    title={Advertencia},
+    colback=red!3,
+    colframe=red!70!black
+}
+
+
+
+% --------------------------------------------------
+% EXAMPLE
+% --------------------------------------------------
+
+\newtcolorbox{examplebox}{
+    docbox,
+    title={Ejemplo},
+    colback=green!3,
+    colframe=green!60!black
+}

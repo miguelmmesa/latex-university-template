@@ -1,0 +1,113 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FILE: headings.tex
+%
+% PURPOSE
+% ---------------------------------
+% Defines the visual style of document headings.
+%
+% This includes:
+%   - chapter titles
+%   - section titles
+%   - subsection titles
+%   - numbering depth
+%
+%
+% ARCHITECTURE ROLE
+% ---------------------------------
+% Part of the style layer of the template.
+%
+% Responsible ONLY for the appearance and spacing
+% of headings in the document hierarchy.
+%
+%
+% DEPENDENCIES
+% ---------------------------------
+% titlesec package
+% 00_config/config.tex
+%
+%
+% NOTES FOR DEVELOPERS
+% ---------------------------------
+% Modifying this file affects the visual hierarchy
+% of the document.
+%
+% Avoid changing heading levels without updating
+% the table of contents configuration.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% --------------------------------------------------
+% HEADING STYLE ENGINE
+% --------------------------------------------------
+
+\usepackage{titlesec}
+
+
+
+% --------------------------------------------------
+% SECTION NUMBERING DEPTH
+% --------------------------------------------------
+
+% Defines how deep section numbering goes
+
+\setcounter{secnumdepth}{3}
+
+% Defines depth in the table of contents
+
+\setcounter{tocdepth}{3}
+
+
+
+% --------------------------------------------------
+% CHAPTER STYLE
+% --------------------------------------------------
+
+% Format:
+% Chapter number + title
+
+\titleformat{\chapter}
+{\Huge\bfseries}
+{\thechapter}
+{1em}
+{}
+
+\titlespacing*{\chapter}
+{0pt}
+{10pt}
+{15pt}
+
+
+
+% --------------------------------------------------
+% SECTION STYLE
+% --------------------------------------------------
+
+\titleformat{\section}
+{\Large\bfseries}
+{\thesection}
+{1em}
+{}
+
+\titlespacing*{\section}
+{0pt}
+{12pt}
+{6pt}
+
+
+
+% --------------------------------------------------
+% SUBSECTION STYLE
+% --------------------------------------------------
+
+\titleformat{\subsection}
+{\large\bfseries}
+{\thesubsection}
+{1em}
+{}
+
+\titlespacing*{\subsection}
+{0pt}
+{10pt}
+{4pt}

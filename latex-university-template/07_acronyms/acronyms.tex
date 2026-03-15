@@ -1,0 +1,78 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FILE: acronyms.tex
+%
+% PURPOSE
+% -------------------------------------------------------
+% Defines all acronyms used throughout the document.
+%
+% The acronyms are managed using the 'acro' package,
+% which automatically expands the full form on first use
+% and uses the short form afterwards.
+%
+%
+% ARCHITECTURE ROLE
+% -------------------------------------------------------
+% Central registry of abbreviations used in the document.
+%
+% Helps maintain consistency and avoids redefining
+% acronyms across chapters.
+%
+%
+% DEPENDENCIES
+% -------------------------------------------------------
+% acro package
+%
+%
+% NOTES FOR DEVELOPERS
+% -------------------------------------------------------
+% New acronyms should always be defined here rather
+% than inside chapter files.
+%
+% Use \ac{label} inside the document to reference
+% acronyms.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% =====================================================
+% SOFTWARE AND PROGRAMMING
+% =====================================================
+
+\DeclareAcronym{api}{
+  short = API,
+  long  = Application Programming Interface
+}
+
+
+
+% =====================================================
+% ARTIFICIAL INTELLIGENCE
+% =====================================================
+
+\DeclareAcronym{ai}{
+  short = IA,
+  long  = Inteligencia Artificial
+}
+
+
+
+% =====================================================
+% WEB TECHNOLOGIES
+% =====================================================
+
+\DeclareAcronym{rest}{
+  short = REST,
+  long  = Representational State Transfer
+}
+
+
+
+% =====================================================
+% DATABASES
+% =====================================================
+
+\DeclareAcronym{sql}{
+  short = SQL,
+  long  = Structured Query Language
+}

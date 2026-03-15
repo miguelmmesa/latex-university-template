@@ -1,0 +1,88 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FILE: figures_tables.tex
+%
+% PURPOSE
+% ---------------------------------
+% Defines the styling and numbering behaviour of figures
+% and tables in the document.
+%
+% Includes:
+%   - chapter-based numbering
+%   - caption styling
+%   - source attribution
+%   - float spacing configuration
+%
+%
+% ARCHITECTURE ROLE
+% ---------------------------------
+% Part of the visual style layer of the template.
+%
+% Responsible for ensuring consistency in graphical
+% and tabular elements across the document.
+%
+%
+% DEPENDENCIES
+% ---------------------------------
+% caption package
+% graphicx package
+%
+%
+% NOTES FOR DEVELOPERS
+% ---------------------------------
+% Figure and table numbering follows the format:
+%
+%     ChapterNumber.FigureNumber
+%
+% Example:
+%     Figure 3.2
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% --------------------------------------------------
+% CHAPTER-BASED NUMBERING
+% --------------------------------------------------
+
+\counterwithin{figure}{chapter}
+\counterwithin{table}{chapter}
+
+\renewcommand{\thefigure}{\thechapter.\arabic{figure}}
+\renewcommand{\thetable}{\thechapter.\arabic{table}}
+
+
+
+% --------------------------------------------------
+% CAPTION STYLE
+% --------------------------------------------------
+
+\captionsetup{
+    font=small,
+    labelfont=bf,
+    labelsep=period,
+    justification=centering,
+    singlelinecheck=false,
+    skip=4pt
+}
+
+
+
+% --------------------------------------------------
+% SOURCE ATTRIBUTION
+% --------------------------------------------------
+
+\newcommand{\source}[1]{
+    \vspace{-6pt}
+    \begin{center}
+    \footnotesize\textit{Fuente: #1}
+    \end{center}
+}
+
+
+
+% --------------------------------------------------
+% FLOAT SPACING
+% --------------------------------------------------
+
+\setlength{\textfloatsep}{12pt}
+\setlength{\intextsep}{12pt}

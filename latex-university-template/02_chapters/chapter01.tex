@@ -1,41 +1,201 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FILE: chapter01_introduccion.tex
+%
+% PURPOSE
+% -------------------------------------------------------
+% Introduces the LaTeX template and explains its
+% objectives, philosophy and intended use.
+%
+%
+% ARCHITECTURE ROLE
+% -------------------------------------------------------
+% First chapter of the template documentation.
+%
+% Provides conceptual context before explaining
+% the technical structure of the project.
+%
+%
+% DEPENDENCIES
+% -------------------------------------------------------
+% environments.tex
+% (definitionbox, notebox, warningbox)
+%
+%
+% NOTES FOR DEVELOPERS
+% -------------------------------------------------------
+% This chapter should remain conceptual.
+%
+% Do not include implementation details here.
+% Technical explanations belong to later chapters.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \chapter{Introducción}
 
-Esta plantilla ha sido diseñada para facilitar la redacción de trabajos académicos
-como informes técnicos, proyectos universitarios o Trabajos Fin de Grado.
+Esta plantilla ha sido diseñada para facilitar la redacción de
+documentos académicos y técnicos utilizando \LaTeX.
 
-El objetivo principal es separar claramente cuatro elementos del proyecto:
-
-\begin{itemize}
-\item Configuración del documento
-\item Estilos tipográficos
-\item Contenido académico
-\item Recursos gráficos y bibliográficos
-\end{itemize}
-
-Gracias a esta separación, el autor puede concentrarse exclusivamente en escribir
-el contenido sin preocuparse por el formato del documento.
-
-\section{Características de la plantilla}
-
-La plantilla incluye las siguientes funcionalidades:
+El objetivo principal es proporcionar una estructura modular
+que permita separar claramente:
 
 \begin{itemize}
-\item Portada institucional configurable con índice automático
-\item Lista de figuras, tablas, códigos y algoritmos
-\item Gestión automática de acrónimos y bibliografía con estilo APA
-\item Estilos tipográficos profesionales
-\item Entornos para código fuente y algoritmos
+\item configuración del documento
+\item estilos tipográficos
+\item contenido académico
+\item recursos gráficos y bibliográficos
 \end{itemize}
 
-\section{Filosofía de uso}
+Gracias a esta separación, el autor puede concentrarse
+exclusivamente en escribir el contenido del documento
+sin preocuparse por el formato.
 
-La plantilla está diseñada siguiendo una filosofía simple:
+
+
+% --------------------------------------------------
+% OBJETIVO DE LA PLANTILLA
+% --------------------------------------------------
+
+\section{Objetivo de la plantilla}
+
+\begin{definitionbox}[Plantilla académica]
+Una plantilla académica es una estructura predefinida
+que automatiza la configuración tipográfica y
+organizativa de un documento.
+\end{definitionbox}
+
+Esta plantilla está diseñada para:
 
 \begin{itemize}
-\item El contenido se escribe en la carpeta \texttt{02\_chapters}
-\item Las figuras se guardan en \texttt{03\_figures}
-\item Las tablas se almacenan en \texttt{04\_tables}
-\item Las referencias bibliográficas se almacenan en \texttt{05\_bibliography}
+\item trabajos universitarios
+\item informes técnicos
+\item proyectos de ingeniería
+\item Trabajos Fin de Grado (TFG)
+\item Trabajos Fin de Máster (TFM)
 \end{itemize}
 
-Esta organización permite mantener el proyecto limpio, modular y fácil de mantener.
+
+
+% --------------------------------------------------
+% FILOSOFÍA DE DISEÑO
+% --------------------------------------------------
+
+\section{Filosofía de diseño}
+
+La plantilla sigue varios principios de diseño inspirados
+en prácticas de ingeniería de software.
+
+\begin{itemize}
+\item modularidad
+\item separación de responsabilidades
+\item reutilización
+\item documentación interna
+\end{itemize}
+
+
+
+\begin{notebox}
+El objetivo no es únicamente generar un documento
+correctamente formateado, sino también demostrar
+buenas prácticas en la organización de proyectos
+\LaTeX.
+\end{notebox}
+
+
+
+% --------------------------------------------------
+% ORGANIZACIÓN DEL PROYECTO
+% --------------------------------------------------
+
+\section{Organización del proyecto}
+
+El proyecto se organiza en varias carpetas que separan
+la configuración del documento del contenido académico.
+
+
+
+\begin{lstlisting}[caption={Estructura general del proyecto},label={code:estructura}]
+main.tex
+
+latex-university-template/
+|-- main.tex
+|-- 00_config/
+|   |-- config.tex
+|   `-- packages.tex
+|-- 01_frontmatter/
+|-- 02_chapters/
+|-- 03_figures/
+|-- 04_bibliography/
+|-- 05_appendices/
+|-- 06_styles/
+`-- 07_acronyms/
+\end{lstlisting}
+
+\source{Plantilla}
+
+
+
+% --------------------------------------------------
+% USO RECOMENDADO
+% --------------------------------------------------
+
+\section{Uso recomendado}
+
+El flujo de trabajo recomendado es el siguiente:
+
+\begin{enumerate}
+\item Configurar los metadatos del documento
+\item Escribir el contenido en la carpeta \texttt{02\_chapters}
+\item Añadir figuras en \texttt{03\_figures}
+\item Añadir referencias en \texttt{05\_bibliography}
+\end{enumerate}
+
+
+
+\begin{warningbox}
+Modificar directamente los archivos de configuración
+o de estilos sin comprender su función puede producir
+errores de compilación o inconsistencias tipográficas.
+\end{warningbox}
+
+
+
+% --------------------------------------------------
+% METODOLOGÍA DE DOCUMENTACIÓN
+% --------------------------------------------------
+
+\section{Metodología de documentación}
+
+Todos los archivos de la plantilla siguen una convención
+de comentarios estructurados.
+
+Cada archivo comienza con un bloque de documentación
+que describe su función dentro del proyecto.
+
+\begin{lstlisting}[caption={Bloque de documentación estándar},label={code:docblock}]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FILE: filename.tex
+%
+% PURPOSE
+% Describe el proposito del archivo
+%
+% ARCHITECTURE ROLE
+% Describe su funcion dentro del sistema
+%
+% DEPENDENCIES
+% Archivos o paquetes necesarios
+%
+% NOTES FOR DEVELOPERS
+% Indicaciones para mantenimiento
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{lstlisting}
+
+\source{Plantilla}
+
+
+
+\begin{examplebox}
+Este sistema de documentación permite comprender
+rápidamente la arquitectura del proyecto al revisar
+los archivos de la plantilla.
+\end{examplebox}

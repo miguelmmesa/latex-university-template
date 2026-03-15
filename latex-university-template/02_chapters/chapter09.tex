@@ -1,0 +1,348 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FILE: chapter09_guia_uso.tex
+%
+% PURPOSE
+% -------------------------------------------------------
+% Provides a step-by-step guide for using the template.
+%
+%
+% ARCHITECTURE ROLE
+% -------------------------------------------------------
+% Practical user guide.
+%
+% This chapter explains how to start a project using
+% the template and how to work with its main features.
+%
+%
+% DEPENDENCIES
+% -------------------------------------------------------
+% Entire template structure
+%
+%
+% NOTES FOR DEVELOPERS
+% -------------------------------------------------------
+% This chapter should remain procedural and explicit.
+%
+% The goal is to allow both humans and automated agents
+% to understand how to operate the template correctly.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\chapter{Guía de uso de la plantilla}
+
+Este capítulo explica paso a paso cómo utilizar la
+plantilla para escribir un documento académico.
+
+
+
+% --------------------------------------------------
+% PASO 1
+% --------------------------------------------------
+
+\section{Paso 1 — Obtener la plantilla}
+
+El primer paso consiste en descargar la plantilla.
+
+Esto puede hacerse de dos formas.
+
+\begin{itemize}
+
+\item descargando el archivo \texttt{.zip} del repositorio
+\item clonando el repositorio con Git
+
+\end{itemize}
+
+
+
+\begin{lstlisting}[caption={Clonar repositorio},label={code:clone}]
+git clone https://github.com/usuario/latex-template.git
+\end{lstlisting}
+
+\source{Plantilla}
+
+
+
+Una vez descargada la plantilla, el usuario debe abrir
+el archivo principal:
+
+\texttt{main.tex}
+
+
+
+% --------------------------------------------------
+% PASO 2
+% --------------------------------------------------
+
+\section{Paso 2 — Configurar los metadatos}
+
+Antes de escribir el contenido del documento es necesario
+configurar los metadatos.
+
+Estos se encuentran en el archivo:
+
+\texttt{00\_config/config.tex}
+
+
+
+Ejemplo:
+
+\begin{lstlisting}[caption={Configuración de metadatos},label={code:metadata}]
+\newcommand{\documenttitle}{Titulo del Trabajo}
+\newcommand{\documentauthor}{Nombre del Autor}
+\newcommand{\degree}{Grado en Ingenieria Informatica}
+\newcommand{\faculty}{Facultad de Ciencias y Tecnologia}
+\newcommand{\university}{UNIE Universidad}
+\end{lstlisting}
+
+\source{Plantilla}
+
+
+
+\begin{notebox}
+Estos metadatos se utilizan automáticamente en
+varias partes del documento, como la portada
+y los metadatos del PDF.
+\end{notebox}
+
+
+
+% --------------------------------------------------
+% PASO 3
+% --------------------------------------------------
+
+\section{Paso 3 — Crear capítulos}
+
+El contenido principal del documento se escribe en la
+carpeta:
+
+\texttt{02\_chapters}
+
+
+
+Cada capítulo debe almacenarse en un archivo independiente.
+
+Ejemplo:
+
+\begin{lstlisting}[caption={Crear un capítulo},label={code:createchapter}]
+\chapter{Introduccion}
+
+Este capitulo introduce el tema del documento.
+\end{lstlisting}
+
+\source{Plantilla}
+
+
+
+Después, el capítulo debe añadirse en el archivo
+\texttt{main.tex}.
+
+\begin{lstlisting}[caption={Cargar capítulo},label={code:loadchapter}]
+\input{02_chapters/chapter01}
+\end{lstlisting}
+
+\source{Plantilla}
+
+
+
+% --------------------------------------------------
+% PASO 4
+% --------------------------------------------------
+
+\section{Paso 4 — Añadir figuras}
+
+Las imágenes deben almacenarse en la carpeta:
+
+\texttt{03\_figures}
+
+
+
+Las figuras se insertan mediante la macro:
+
+\begin{lstlisting}[caption={Insertar figura},label={code:insertfigure}]
+\figura{03_figures/imagen}{
+Topologia de red
+}{Elaboracion propia}{topologia}
+\end{lstlisting}
+
+\source{Plantilla}
+
+
+
+% --------------------------------------------------
+% PASO 5
+% --------------------------------------------------
+
+\section{Paso 5 — Añadir tablas}
+
+Las tablas se insertan mediante la macro:
+
+\begin{lstlisting}[caption={Insertar tabla},label={code:table}]
+\tabla{
+\begin{tabular}{cc}
+Dato 1 & Dato 2 \\
+Dato 3 & Dato 4
+\end{tabular}
+}{Ejemplo de tabla}{Plantilla}{tablaejemplo}
+\end{lstlisting}
+
+\source{Plantilla}
+
+
+
+% --------------------------------------------------
+% PASO 6
+% --------------------------------------------------
+
+\section{Paso 6 — Añadir código}
+
+El código fuente se muestra mediante el entorno
+\texttt{codeblock}.
+
+\begin{lstlisting}[caption={Bloque de código},label={code:codeblock}]
+\begin{codeblock}{Ejemplo de codigo}{ejemplo}
+for i in range(10):
+    print(i)
+\end{codeblock}
+
+\source{Plantilla}
+\end{lstlisting}
+
+\source{Plantilla}
+
+
+
+% --------------------------------------------------
+% PASO 7
+% --------------------------------------------------
+
+\section{Paso 7 — Añadir acrónimos}
+
+Los acrónimos se definen en:
+
+\texttt{07\_acronyms/acronyms.tex}
+
+Ejemplo:
+
+\begin{lstlisting}[caption={Definición de acrónimo},label={code:acronym}]
+\DeclareAcronym{api}{
+  short = API ,
+  long  = Application Programming Interface
+}
+\end{lstlisting}
+
+\source{Plantilla}
+
+
+
+Uso en el documento:
+
+\begin{lstlisting}[caption={Uso de acrónimo},label={code:acronymuse}]
+\ac{api}
+\end{lstlisting}
+
+\source{Plantilla}
+
+
+
+Ejemplo en texto:
+
+\begin{examplebox}
+Las \ac{api} permiten la comunicación entre
+diferentes sistemas de software.
+\end{examplebox}
+
+
+
+% --------------------------------------------------
+% PASO 8
+% --------------------------------------------------
+
+\section{Paso 8 — Añadir referencias}
+
+Las referencias bibliográficas se almacenan en:
+
+\texttt{04\_bibliography/references.bib}
+
+
+
+Ejemplo de referencia:
+
+\begin{lstlisting}[caption={Referencia BibTeX},label={code:bib}]
+@book{knuth1984,
+  author = {Donald E. Knuth},
+  title = {The TeXbook},
+  year = {1984},
+  publisher = {Addison-Wesley}
+}
+\end{lstlisting}
+
+\source{Plantilla}
+
+
+
+Uso en el texto:
+
+\begin{lstlisting}[caption={Citar referencia},label={code:cite}]
+\cite{knuth1984}
+\end{lstlisting}
+
+\source{Plantilla}
+
+
+
+Ejemplo:
+
+\begin{examplebox}
+El sistema tipográfico \TeX{} fue desarrollado por
+Donald Knuth \cite{knuth1984}.
+\end{examplebox}
+
+
+
+% --------------------------------------------------
+% PASO 9
+% --------------------------------------------------
+
+\section{Paso 9 — Compilar el documento}
+
+Para generar el documento final es necesario compilar
+el proyecto.
+
+El proceso típico es el siguiente:
+
+\begin{lstlisting}[caption={Proceso de compilación},label={code:compile}]
+pdflatex main.tex
+biber main
+pdflatex main.tex
+pdflatex main.tex
+\end{lstlisting}
+
+\source{Plantilla}
+
+
+
+\begin{warningbox}
+Si no se ejecuta \texttt{biber}, las referencias
+bibliográficas no se generarán correctamente.
+\end{warningbox}
+
+
+
+% --------------------------------------------------
+% RESULTADO
+% --------------------------------------------------
+
+\section{Resultado}
+
+Después de completar estos pasos, el documento
+final se generará como un archivo PDF completamente
+formateado.
+
+
+
+\begin{examplebox}
+La estructura modular de la plantilla permite
+concentrarse en el contenido del documento sin
+preocuparse por los detalles tipográficos.
+\end{examplebox}

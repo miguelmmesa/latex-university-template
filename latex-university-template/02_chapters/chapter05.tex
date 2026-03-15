@@ -1,33 +1,193 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FILE: chapter05_codigo.tex
+%
+% PURPOSE
+% -------------------------------------------------------
+% Explains how to insert source code and algorithms
+% using the tools provided by the template.
+%
+%
+% ARCHITECTURE ROLE
+% -------------------------------------------------------
+% User guide chapter.
+%
+% Documents the configuration of the listings package
+% and the custom codeblock environment defined in
+% environments.tex.
+%
+%
+% DEPENDENCIES
+% -------------------------------------------------------
+% code_style.tex
+% environments.tex
+% listings
+%
+%
+% NOTES FOR DEVELOPERS
+% -------------------------------------------------------
+% If the code style configuration changes, this chapter
+% must be updated accordingly.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \chapter{Código y algoritmos}
 
-La plantilla incluye soporte para insertar código fuente.
+Los documentos técnicos suelen incluir fragmentos de
+código fuente para explicar algoritmos, configuraciones
+o ejemplos de implementación.
 
-\section{Código}
+Esta plantilla proporciona herramientas para mostrar
+código de forma clara y consistente.
 
-\begin{lstlisting}[language=Java,caption={Ejemplo de código Java}]
-public class HolaMundo {
 
-    public static void main(String[] args) {
 
-        System.out.println("Hola mundo");
+% --------------------------------------------------
+% ENTORNO LSTLISTING
+% --------------------------------------------------
 
-    }
+\section{Entorno lstlisting}
 
-}
+El paquete \texttt{listings} permite mostrar código
+fuente dentro del documento.
+
+\begin{definitionbox}[Código fuente]
+Un bloque de código fuente es una representación
+tipográfica de instrucciones escritas en un lenguaje
+de programación.
+\end{definitionbox}
+
+
+
+Un bloque de código simple puede escribirse así:
+
+\begin{lstlisting}[caption={Ejemplo básico de código},label={code:basic}]
+for i in range(10):
+    print(i)
 \end{lstlisting}
+
+\source{Plantilla}
+
+
+
+% --------------------------------------------------
+% ENTORNO CODEBLOCK
+% --------------------------------------------------
+
+\section{Entorno codeblock}
+
+La plantilla define un entorno personalizado llamado
+\texttt{codeblock} que simplifica la inserción de
+bloques de código.
+
+\begin{lstlisting}[caption={Uso del entorno codeblock},label={code:codeblock}]
+\begin{codeblock}{Ejemplo de codigo}{ejemplo}
+for i in range(10):
+    print(i)
+\end{codeblock}
+
+\source{Plantilla}
+\end{lstlisting}
+
+\source{Plantilla}
+
+
+
+Este entorno encapsula internamente el entorno
+\texttt{lstlisting} y aplica automáticamente el
+estilo definido en la plantilla.
+
+
+
+\begin{notebox}
+Después del entorno \texttt{codeblock} se recomienda
+añadir siempre el comando \texttt{\textbackslash source}
+para indicar el origen del código.
+\end{notebox}
+
+
+
+% --------------------------------------------------
+% ESTILO DEL CÓDIGO
+% --------------------------------------------------
+
+\section{Estilo del código}
+
+El estilo de los bloques de código está definido en
+el archivo:
+
+\texttt{07\_styles/code\_style.tex}
+
+Este estilo incluye:
+
+\begin{itemize}
+
+\item fondo ligeramente sombreado
+\item numeración de líneas
+\item resaltado de palabras clave
+\item ajuste automático de líneas largas
+
+\end{itemize}
+
+
+
+\begin{examplebox}
+Este estilo está diseñado para mejorar la
+legibilidad del código dentro de documentos
+académicos y técnicos.
+\end{examplebox}
+
+
+
+% --------------------------------------------------
+% ALGORITMOS
+% --------------------------------------------------
 
 \section{Algoritmos}
 
-Los algoritmos se insertan utilizando el entorno \texttt{algorithm}.
+Para describir algoritmos de forma estructurada
+se utiliza el paquete \texttt{algorithm} junto con
+\texttt{algpseudocode}.
 
-\begin{algorithm}
-\caption{Búsqueda lineal}
-for i = 1 to n do
+Los algoritmos pueden insertarse mediante la macro
+definida en la plantilla.
 
-if A[i] == x then
-return i
+\begin{lstlisting}[caption={Ejemplo de algoritmo},label={code:algorithmexample}]
+\algoritmo{
+\begin{algorithmic}
+\For{i = 1 to n}
+\If{A[i] == x}
+\Return i
+\EndIf
+\EndFor
+\end{algorithmic}
+}{Busqueda lineal}{Plantilla}{busqueda}
+\end{lstlisting}
 
-end if
-end for
-return -1
-\end{algorithm}
+\source{Plantilla}
+
+
+
+% --------------------------------------------------
+% BUENAS PRÁCTICAS
+% --------------------------------------------------
+
+\section{Buenas prácticas}
+
+Para mantener la claridad del documento se recomienda:
+
+\begin{itemize}
+
+\item incluir solo el código relevante
+\item evitar bloques de código excesivamente largos
+\item comentar los fragmentos de código cuando sea necesario
+
+\end{itemize}
+
+
+
+\begin{warningbox}
+Insertar código sin formato o utilizando
+entornos verbatim simples reduce la
+legibilidad del documento.
+\end{warningbox}

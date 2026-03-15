@@ -1,0 +1,67 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FILE: code_style.tex
+%
+% PURPOSE
+% -------------------------------------------------------
+% Defines the styling of source code blocks in the document.
+%
+% Includes:
+% - Color definitions
+% - Default listings style
+% - Language definitions
+% - Global configuration
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% --------------------------------------------------
+% REQUIRED PACKAGES
+% --------------------------------------------------
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{float}
+
+% --------------------------------------------------
+% COLOR DEFINITIONS
+% --------------------------------------------------
+
+\definecolor{codebg}{RGB}{248,248,248}
+\definecolor{codecomment}{RGB}{120,120,120}
+\definecolor{codestring}{RGB}{20,120,20}
+
+% --------------------------------------------------
+% DEFAULT CODE STYLE
+% --------------------------------------------------
+
+\lstdefinestyle{code}{
+    backgroundcolor=\color{codebg},
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    commentstyle=\color{codecomment},
+    stringstyle=\color{codestring},
+    numbers=left,
+    numberstyle=\tiny,
+    stepnumber=1,
+    numbersep=10pt,
+    frame=single,
+    breaklines=true,
+    tabsize=2,
+    captionpos=b,
+}
+
+% --------------------------------------------------
+% LATEX LANGUAGE FOR LISTINGS
+% --------------------------------------------------
+
+\lstdefinelanguage{TeX}{
+    morekeywords={documentclass,usepackage,begin,end,chapter,section,subsection,caption,labe,includegraphics
+},
+    sensitive=true,
+    morecomment=[l]{\%}
+}
+
+% --------------------------------------------------
+% GLOBAL LISTINGS CONFIGURATION
+% --------------------------------------------------
+
+\lstset{style=code}

@@ -1,40 +1,209 @@
-\chapter{Estructura del proyecto}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FILE: chapter02_arquitectura.tex
+%
+% PURPOSE
+% -------------------------------------------------------
+% Explains the internal architecture of the LaTeX template.
+%
+%
+% ARCHITECTURE ROLE
+% -------------------------------------------------------
+% Technical documentation of the template structure.
+%
+%
+% DEPENDENCIES
+% -------------------------------------------------------
+% environments.tex
+%
+%
+% NOTES FOR DEVELOPERS
+% -------------------------------------------------------
+% If the directory structure of the template changes,
+% this chapter must be updated accordingly.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-La plantilla está organizada en varias carpetas que separan la configuración del
-documento del contenido académico.
 
-\section{Estructura general}
+\chapter{Arquitectura del proyecto}
 
-La estructura del proyecto es la siguiente:
+La plantilla está diseñada siguiendo principios de
+arquitectura modular inspirados en prácticas de
+ingeniería de software.
 
-\begin{lstlisting}[language=TeX,caption={Estructura del proyecto}]
-main.tex
+Cada componente del proyecto tiene una responsabilidad
+claramente definida dentro del sistema.
 
-00_config/
-01_frontmatter/
-02_chapters/
-03_figures/
-04_tables/
-05_bibliography/
-06_appendices/
-07_styles/
-08_acronyms/
+
+
+% --------------------------------------------------
+% PRINCIPIOS DE ARQUITECTURA
+% --------------------------------------------------
+
+\section{Principios de arquitectura}
+
+\begin{definitionbox}[Arquitectura modular]
+Una arquitectura modular divide un sistema en componentes
+independientes que pueden mantenerse o modificarse de
+forma aislada.
+\end{definitionbox}
+
+En esta plantilla, el proyecto se divide en varios módulos
+que gestionan aspectos distintos del documento.
+
+
+
+\begin{itemize}
+
+\item configuración global
+\item estilos tipográficos
+\item contenido académico
+\item recursos gráficos
+\item bibliografía
+\item acrónimos
+
+\end{itemize}
+
+
+
+\begin{notebox}
+Separar estas responsabilidades permite modificar el
+formato del documento sin alterar el contenido.
+\end{notebox}
+
+
+
+% --------------------------------------------------
+% ESTRUCTURA DEL PROYECTO
+% --------------------------------------------------
+
+\section{Estructura del proyecto}
+
+La estructura de carpetas del proyecto es la siguiente.
+
+\begin{lstlisting}[caption={Estructura de directorios del proyecto},label={code:projectstructure}]
+latex-university-template/
+|-- main.tex
+|-- 00_config/
+|   |-- config.tex
+|   `-- packages.tex
+|-- 01_frontmatter/
+|-- 02_chapters/
+|-- 03_figures/
+|-- 04_bibliography/
+|-- 05_appendices/
+|-- 06_styles/
+`-- 07_acronyms/
 \end{lstlisting}
 
-Cada carpeta tiene una función específica dentro del proyecto.
+\source{Plantilla}
+
+Cada carpeta tiene una función específica dentro del sistema.
+
+
+
+% --------------------------------------------------
+% ARCHIVO PRINCIPAL
+% --------------------------------------------------
 
 \section{Archivo principal}
 
-El archivo principal del documento es:
+El archivo principal del proyecto es:
 
-\begin{lstlisting}[language=TeX,caption={Archivo principal del proyecto}]
+\begin{lstlisting}[caption={Archivo principal del documento},label={code:mainfile}]
 main.tex
 \end{lstlisting}
 
-Este archivo controla la estructura general del documento e incluye
-los distintos capítulos del trabajo mediante el comando:
+\source{Plantilla}
 
-\begin{lstlisting}[language=TeX,caption={Carga de capítulos en main.tex}]
-\input{02_chapters/chapter01}
-\input{02_chapters/chapter02}
+Este archivo controla la estructura general del documento
+e incluye los distintos capítulos del trabajo.
+
+
+
+% --------------------------------------------------
+% FLUJO DE COMPILACIÓN
+% --------------------------------------------------
+
+\section{Flujo de compilación}
+
+Durante la compilación del documento, \LaTeX{} sigue
+una secuencia similar a la siguiente.
+
+\begin{lstlisting}[caption={Flujo de compilación del documento},label={code:compileflow}]
+main.tex
+
+-> carga configuracion global
+-> carga paquetes
+-> carga estilos tipograficos
+-> carga acronimos
+-> genera frontmatter
+-> compila capitulos
+-> genera bibliografia
+-> compila apendices
 \end{lstlisting}
+
+\source{Plantilla}
+
+
+
+% --------------------------------------------------
+% RESPONSABILIDAD DE LOS MODULOS
+% --------------------------------------------------
+
+\section{Responsabilidad de los módulos}
+
+\begin{itemize}
+
+\item \textbf{00\_config}  
+Configuración global del documento.
+
+\item \textbf{01\_frontmatter}  
+Portada, dedicatoria, resúmenes.
+
+\item \textbf{02\_chapters}  
+Contenido principal.
+
+\item \textbf{03\_figures}  
+Imágenes del documento.
+
+\item \textbf{04\_bibliography}  
+Base de datos de referencias.
+
+\item \textbf{05\_appendices}  
+Apéndices del documento.
+
+\item \textbf{06\_styles}  
+Definición de estilos tipográficos.
+
+\item \textbf{07\_acronyms}  
+Definición de acrónimos.
+
+\end{itemize}
+
+
+
+
+% --------------------------------------------------
+% BENEFICIOS DE LA ARQUITECTURA
+% --------------------------------------------------
+
+\section{Beneficios de la arquitectura}
+
+Esta arquitectura modular ofrece varias ventajas.
+
+\begin{itemize}
+
+\item facilita el mantenimiento del proyecto
+\item permite reutilizar la plantilla en múltiples documentos
+\item separa claramente contenido y formato
+\item reduce errores de compilación
+
+\end{itemize}
+
+
+
+\begin{examplebox}
+Un autor puede escribir todos los capítulos del documento
+sin necesidad de modificar los archivos de configuración
+o los estilos tipográficos.
+\end{examplebox}

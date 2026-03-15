@@ -1,0 +1,254 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FILE: chapter08_build_mode.tex
+%
+% PURPOSE
+% -------------------------------------------------------
+% Explains the build modes provided by the template.
+%
+%
+% ARCHITECTURE ROLE
+% -------------------------------------------------------
+% User guide chapter.
+%
+% Documents the engineering build system used to
+% control draft and final compilation modes.
+%
+%
+% DEPENDENCIES
+% -------------------------------------------------------
+% config.tex
+% packages.tex
+% tikz
+%
+%
+% NOTES FOR DEVELOPERS
+% -------------------------------------------------------
+% If the build system changes, this chapter must be
+% updated accordingly.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\chapter{Modo build}
+
+La plantilla incorpora un sistema de compilación que
+permite generar diferentes versiones del documento.
+
+Este sistema facilita el desarrollo del documento y
+la generación de la versión final.
+
+
+
+% --------------------------------------------------
+% CONCEPTO DE BUILD
+% --------------------------------------------------
+
+\section{Concepto de build}
+
+\begin{definitionbox}[Build]
+Un \textit{build} es el proceso mediante el cual el
+código fuente de un proyecto se transforma en su
+resultado final.
+\end{definitionbox}
+
+En el caso de \LaTeX{}, el build corresponde al
+proceso de compilación que genera el archivo PDF.
+
+
+
+% --------------------------------------------------
+% MODOS DE COMPILACIÓN
+% --------------------------------------------------
+
+\section{Modos de compilación}
+
+La plantilla define dos modos principales:
+
+\begin{itemize}
+
+\item modo \textbf{draft}
+\item modo \textbf{final}
+
+\end{itemize}
+
+
+
+% --------------------------------------------------
+% MODO DRAFT
+% --------------------------------------------------
+
+\section{Modo draft}
+
+El modo \texttt{draft} está diseñado para el proceso
+de escritura y revisión del documento.
+
+\begin{lstlisting}[caption={Activar modo draft},label={code:draftmode}]
+\drafttrue
+\end{lstlisting}
+
+\source{Plantilla}
+
+
+
+En este modo el documento puede mostrar información
+adicional útil durante el desarrollo.
+
+
+
+\begin{examplebox}
+Ejemplos de información útil en modo draft:
+
+\begin{itemize}
+
+\item información de compilación
+\item fecha de generación del documento
+\item identificadores internos del documento
+
+\end{itemize}
+
+\end{examplebox}
+
+
+
+% --------------------------------------------------
+% MODO FINAL
+% --------------------------------------------------
+
+\section{Modo final}
+
+El modo final está pensado para la versión definitiva
+del documento.
+
+\begin{lstlisting}[caption={Modo final},label={code:finalmode}]
+\draftfalse
+\end{lstlisting}
+
+\source{Plantilla}
+
+
+
+En este modo el documento se genera sin información
+de depuración ni elementos auxiliares.
+
+
+
+\begin{notebox}
+Por defecto la plantilla compila en modo final.
+\end{notebox}
+
+
+
+% --------------------------------------------------
+% INFORMACIÓN DE BUILD
+% --------------------------------------------------
+
+\section{Información de compilación}
+
+La plantilla puede mostrar información sobre el
+proceso de compilación.
+
+\begin{lstlisting}[caption={Macro de información de build},label={code:buildinfo}]
+\BuildInfo
+\end{lstlisting}
+
+\source{Plantilla}
+
+
+
+Esta información puede incluir:
+
+\begin{itemize}
+
+\item fecha de compilación
+\item versión del documento
+\item estado del build
+
+\end{itemize}
+
+
+
+% --------------------------------------------------
+% METADATOS DEL DOCUMENTO
+% --------------------------------------------------
+
+\section{Metadatos del documento}
+
+El archivo PDF generado incluye metadatos que
+describen el documento.
+
+Estos metadatos se configuran mediante:
+
+\begin{lstlisting}[caption={Metadatos del PDF},label={code:metadata}]
+\hypersetup{
+  pdftitle={\documenttitle},
+  pdfauthor={\documentauthor},
+  pdfcreator={mammesa}
+}
+\end{lstlisting}
+
+\source{Plantilla}
+
+
+
+\begin{definitionbox}[Metadatos]
+Los metadatos son información interna del archivo
+PDF que describe el contenido del documento.
+\end{definitionbox}
+
+
+
+% --------------------------------------------------
+% LOG DE COMPILACIÓN
+% --------------------------------------------------
+
+\section{Log de compilación}
+
+Durante el proceso de compilación, la plantilla
+puede generar mensajes informativos en el log.
+
+\begin{lstlisting}[caption={Mensaje de compilación},label={code:logmessage}]
+\typeout{mammesa-template-loaded}
+\end{lstlisting}
+
+\source{Plantilla}
+
+
+
+Este tipo de mensajes permite verificar que los
+componentes principales de la plantilla se han
+cargado correctamente.
+
+
+
+\begin{warningbox}
+Los mensajes del log no aparecen en el documento
+final, pero pueden ser útiles para depurar
+problemas de compilación.
+\end{warningbox}
+
+
+
+% --------------------------------------------------
+% VENTAJAS DEL SISTEMA
+% --------------------------------------------------
+
+\section{Ventajas del sistema}
+
+El sistema de build ofrece varias ventajas:
+
+\begin{itemize}
+
+\item separación entre documento en desarrollo y final
+\item control centralizado de la compilación
+\item información adicional para depuración
+\item metadatos estructurados del documento
+
+\end{itemize}
+
+
+
+\begin{examplebox}
+Este enfoque está inspirado en sistemas de
+construcción utilizados en proyectos de software,
+adaptados al flujo de trabajo de \LaTeX.
+\end{examplebox}

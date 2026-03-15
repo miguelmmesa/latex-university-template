@@ -1,40 +1,244 @@
-\chapter{Figuras y tablas}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FILE: chapter04_floats.tex
+%
+% PURPOSE
+% -------------------------------------------------------
+% Explains how to insert figures, tables and algorithms
+% using the high-level macros provided by the template.
+%
+%
+% ARCHITECTURE ROLE
+% -------------------------------------------------------
+% User guide chapter.
+%
+% Documents the float wrapper macros defined in
+% environments.tex.
+%
+%
+% DEPENDENCIES
+% -------------------------------------------------------
+% environments.tex
+% graphicx
+% algorithm
+%
+%
+% NOTES FOR DEVELOPERS
+% -------------------------------------------------------
+% If the float wrapper macros change, this chapter
+% must be updated accordingly.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\chapter{Floats de alto nivel}
+
+La plantilla proporciona macros que simplifican la
+inserción de figuras, tablas y algoritmos.
+
+Estas macros encapsulan los entornos estándar de
+\LaTeX{} y garantizan un formato consistente en
+todo el documento.
+
+
+
+% --------------------------------------------------
+% CONCEPTO DE FLOAT
+% --------------------------------------------------
+
+\section{Concepto de float}
+
+\begin{definitionbox}[Float]
+En \LaTeX{}, un \textit{float} es un elemento del
+documento que puede moverse automáticamente para
+optimizar el diseño de la página.
+\end{definitionbox}
+
+Los floats más comunes son:
+
+\begin{itemize}
+
+\item figuras
+\item tablas
+\item algoritmos
+
+\end{itemize}
+
+
+
+% --------------------------------------------------
+% INSERCIÓN DE FIGURAS
+% --------------------------------------------------
 
 \section{Inserción de figuras}
 
-Las figuras se insertan utilizando el entorno \texttt{figure}.
+Las figuras se insertan mediante la macro:
 
-
-
-\begin{lstlisting}[language=TeX,caption={Inserción de una figura}]
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.6\textwidth]{03_figures/ejemplo}
-\caption{Ejemplo de figura}
-\label{fig:ejemplo}
-\end{figure}
+\begin{lstlisting}[caption={Macro de inserción de figuras},label={code:figura}]
+\figura{ruta_imagen}{caption}{fuente}{label}
 \end{lstlisting}
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.6\textwidth]{03_figures/borrador.png}
-\caption{Ejemplo de figura dentro del documento}
-\label{fig:demo}
-\end{figure}
+\source{Plantilla}
 
-\clearpage
+Donde:
+
+\begin{itemize}
+
+\item \textbf{ruta\_imagen} es la ruta del archivo de imagen
+\item \textbf{caption} es el título de la figura
+\item \textbf{fuente} indica el origen de la figura
+\item \textbf{label} es la etiqueta para referencias
+
+\end{itemize}
+
+\figura{03_figures/borrador.png}{Ejemplo de figura dentro del documento}{google imagenes}{fig:demo}
+
+
+
+\begin{lstlisting}[caption={Ejemplo de inserción de figura},label={code:figuraej}]
+\figura{03_figures/borrador.png}{Ejemplo de figura dentro del documento}{google imagenes}{fig:demo}
+\end{lstlisting}
+
+\source{Plantilla}
+
+
+
+\begin{notebox}
+Las imágenes utilizadas en el documento deben
+almacenarse en la carpeta \texttt{03\_figures}.
+\end{notebox}
+
+
+
+% --------------------------------------------------
+% INSERCIÓN DE TABLAS
+% --------------------------------------------------
 
 \section{Inserción de tablas}
 
-Las tablas se insertan utilizando el entorno \texttt{table}.
+Las tablas se insertan mediante la macro:
 
-\begin{lstlisting}[language=TeX,caption={Ejemplo de tabla}]
-\begin{table}[h]
-\centering
-\begin{tabular}{cc}
-Dato 1 & Dato 2 \\
-Dato 3 & Dato 4
-\end{tabular}
-\caption{Ejemplo de tabla}
-\end{table}
+\begin{lstlisting}[caption={Macro de inserción de tablas},label={code:tabla}]
+\tabla{contenido_tabla}{caption}{fuente}{label}
 \end{lstlisting}
+
+\source{Plantilla}
+
+\tabla{\centering\begin{tabular}{cc}
+\toprule
+Dato 1 & Dato 2 \\
+\midrule
+Dato 3 & Dato 4 \\
+\bottomrule
+\end{tabular}}{Ejemplo de tabla}{Plantilla}{table:tablaej}
+
+Ejemplo:
+
+\begin{lstlisting}[caption={Ejemplo de código tabla},label={code:tablaej}]
+\tabla{\centering\begin{tabular}{cc}
+\toprule
+Dato 1 & Dato 2 \\
+\midrule
+Dato 3 & Dato 4 \\
+\bottomrule
+\end{tabular}}{Ejemplo de tabla}{Plantilla}{tablaejemplo}
+\end{lstlisting}
+
+\source{Plantilla}
+
+
+
+% --------------------------------------------------
+% INSERCIÓN DE ALGORITMOS
+% --------------------------------------------------
+
+\section{Inserción de algoritmos}
+
+Los algoritmos se insertan mediante la macro:
+
+\begin{lstlisting}[caption={Macro de algoritmos},label={code:algoritmo}]
+\algoritmo{contenido}{caption}{fuente}{label}
+\end{lstlisting}
+
+\source{Plantilla}
+
+
+
+Ejemplo:
+
+\begin{lstlisting}[caption={Ejemplo de algoritmo},label={code:algoritmoej}]
+\algoritmo{
+\begin{algorithmic}
+\For{i = 1 to n}
+\If{A[i] == x}
+\Return i
+\EndIf
+\EndFor
+\end{algorithmic}
+}{Busqueda lineal}{Plantilla}{busqueda}
+\end{lstlisting}
+
+\source{Plantilla}
+
+\algoritmo{
+\begin{algorithmic}
+\For{i = 1 to n}
+\If{A[i] == x}
+\Return i
+\EndIf
+\EndFor
+\end{algorithmic}
+}{Busqueda lineal}{Plantilla}{busqueda}
+
+% --------------------------------------------------
+% FUENTE DE FIGURAS
+% --------------------------------------------------
+
+\section{Fuente de figuras y tablas}
+
+Todas las figuras y tablas incluyen automáticamente
+una fuente mediante el comando:
+
+\begin{lstlisting}[caption={Macro de fuente},label={code:source}]
+\source{Plantilla}
+\end{lstlisting}
+
+\source{Plantilla}
+
+Este comando genera una línea tipográfica centrada
+debajo del caption que indica el origen del contenido.
+
+
+
+% --------------------------------------------------
+% VENTAJAS DEL SISTEMA
+% --------------------------------------------------
+
+\section{Ventajas del sistema}
+
+Utilizar estas macros ofrece varias ventajas.
+
+\begin{itemize}
+
+\item formato uniforme en todo el documento
+\item numeración automática
+\item inclusión automática de fuentes
+\item etiquetas consistentes
+
+\end{itemize}
+
+
+
+\begin{warningbox}
+Insertar figuras o tablas directamente mediante
+los entornos estándar de \LaTeX{} puede generar
+inconsistencias de formato dentro del documento.
+\end{warningbox}
+
+
+
+\begin{examplebox}
+Gracias a estas macros, el autor no necesita recordar
+la estructura completa de los entornos \texttt{figure}
+o \texttt{table}, lo que simplifica la escritura del
+documento.
+\end{examplebox}

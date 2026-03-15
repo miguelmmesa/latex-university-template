@@ -1,10 +1,37 @@
-% =====================================================
-% METADATOS DEL DOCUMENTO
-% =====================================================
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FILE: config.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% PURPOSE
+% -------
+% Defines global configuration variables and reusable macros
+% used throughout the LaTeX template.
+%
+% ARCHITECTURE ROLE
+% -----------------
+% Central configuration hub of the template.
+%
+% Defines:
+%   - document metadata
+%   - build modes
+%   - reusable macros
+%   - template signature system
+%
+% NOTES FOR DEVELOPERS
+% --------------------
+% Do NOT load packages here.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\documenttitle}{Título del Trabajo}
 
-\newcommand{\documentauthor}{Nombre del Autor}
+
+% ==================================================
+% DOCUMENT METADATA
+% ==================================================
+
+\newcommand{\documenttitle}{Plantilla LaTeX}
+
+\newcommand{\documentauthor}{Miguel Ángel Martín Mesa}
 
 \newcommand{\degree}{Grado en Ingeniería Informática}
 
@@ -16,6 +43,131 @@
 
 \newcommand{\department}{Departamento}
 
+\newcommand{\subject}{Personal}
+
 \newcommand{\academicyear}{2025-2026}
 
-\newcommand{\submissiondate}{Junio 2026}
+\newcommand{\submissiondate}{\today}
+
+% ==================================================
+% DOCUMENT INFORMATION
+% ==================================================
+
+\newcommand{\documentversion}{4.0}
+
+\newcommand{\documenttype}{Plantilla}
+
+\newcommand{\documentlanguage}{Español}
+
+
+
+% ==================================================
+% TEXT INFORMATION
+% ==================================================
+\newcommand{\documentlinespacing}{\onehalfspacing}
+
+
+
+% ==================================================
+% BUILD MODE
+% ==================================================
+
+\newif\ifdraftmode
+
+\draftmodetrue
+% \draftmodefalse
+
+% ==================================================
+% ENGINEERING BUILD METADATA
+% ==================================================
+
+% Compilation log markers
+
+\typeout{mmesa-template-initialized}
+
+% Build timestamp
+
+\newcommand{\builddate}{\DTMnow}
+
+% Build version
+
+\newcommand{\buildversion}{\documentversion}
+
+% Build mode
+
+\ifdraftmode
+\newcommand{\buildmode}{DRAFT}
+\else
+\newcommand{\buildmode}{FINAL}
+\fi
+
+% ==================================================
+% BUILD INFORMATION BLOCK
+% ==================================================
+
+\newcommand{\BuildInfo}{
+\ifdraftmode
+\texttt{
+Version: \buildversion \\
+Build: \builddate \\
+Mode: \buildmode
+}
+\fi
+}
+
+
+% ==================================================
+% FIGURE CONFIGURATION
+% ==================================================
+
+% Base path for images
+
+%\graphicspath{{03_figures/}}
+
+% Default figure width
+
+\newcommand{\defaultfigurewidth}{\textwidth}
+
+\newcommand{\mmesa}{mmesa}
+
+% ==================================================
+% TABLE CONFIGURATION
+% ==================================================
+
+\renewcommand{\arraystretch}{1.3}
+
+
+
+% ==================================================
+% NUMBERING CONFIGURATION
+% ==================================================
+
+%\numberwithin{figure}{chapter}
+%\numberwithin{table}{chapter}
+%\numberwithin{listing}{chapter}
+%\numberwithin{algorithm}{chapter}
+%\numberwithin{equation}{chapter}
+
+
+
+% ==================================================
+% CODE CONFIGURATION
+% ==================================================
+
+\newcommand{\codestyle}{default}
+
+
+
+% ==================================================
+% DOCUMENT MACROS
+% ==================================================
+
+\newcommand{\DocTitle}{\documenttitle}
+
+\newcommand{\DocAuthor}{\documentauthor}
+
+\newcommand{\DocUniversity}{\university}
+
+\newcommand{\DocDegree}{\degree}
+
+\newcommand{\DocDate}{\submissiondate}

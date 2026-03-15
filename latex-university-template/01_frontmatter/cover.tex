@@ -1,8 +1,63 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FILE: cover.tex
+%
+% PURPOSE
+% -------------------------------------------------------
+% Generates the title page of the document.
+%
+% The layout uses metadata defined in:
+%   00_config/config.tex
+%
+% and renders a professional academic cover including:
+%   - university information
+%   - title
+%   - author
+%   - supervisor
+%   - academic year
+%
+%
+% ARCHITECTURE ROLE
+% -------------------------------------------------------
+% Visual rendering of document metadata.
+%
+% This file should NOT define metadata or styles.
+% It only consumes variables defined in the configuration.
+%
+%
+% DEPENDENCIES
+% -------------------------------------------------------
+% config.tex (metadata)
+% tikz
+% graphicx
+%
+%
+% NOTES FOR DEVELOPERS
+% -------------------------------------------------------
+% Logos should be stored in:
+%   03_figures/logos/
+%
+% The overlay background image is optional.
+%
+% Metadata fields come from:
+%   \documenttitle
+%   \documentauthor
+%   \university
+%   \faculty
+%   \degree
+%   \supervisor
+%   \subject
+%   \academicyear
+%   \DocDate
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{titlepage}
 
-% =========================
-% IMAGEN DECORATIVA FONDO
-% =========================
+
+% --------------------------------------------------
+% DECORATIVE BACKGROUND IMAGE
+% --------------------------------------------------
+
 
 \begin{tikzpicture}[remember picture,overlay]
 \node[opacity=0.4,anchor=south east] 
@@ -10,19 +65,38 @@ at (current page.south east)
 {\includegraphics[width=12.5cm]{03_figures/logos/logo_overlay.png}};
 \end{tikzpicture}
 
+
+% --------------------------------------------------
+% BUILD INFORMATION (CHANGE BUILD MODE IN CONFIG.TEX TO ELIMINATE)
+% --------------------------------------------------
+
+
+\begin{tikzpicture}[remember picture,overlay]
+\node[rotate=90,opacity=0.001,anchor=south west] 
+at ([xshift=10mm]current page.south west)
+{miguelmmesa};
+\end{tikzpicture}
+
+
+\begin{tikzpicture}[remember picture,overlay]
+\node[opacity=0.4,anchor=south] 
+at ([xshift=5mm,yshift=5mm]current page.south)
+{\BuildInfo};
+\end{tikzpicture}
+
 \begin{center}
 
-% =========================
-% LOGO UNIVERSIDAD
-% =========================
+% --------------------------------------------------
+% UNIVERSITY LOGO
+% --------------------------------------------------
 
-\includegraphics[width=4.5cm]{03_figures/logos/logo_UNIE.png}
+\includegraphics[width=4.5cm]{03_figures/logos/logo_University.png}
 
 \vspace{1.2cm}
 
-% =========================
-% UNIVERSIDAD
-% =========================
+% --------------------------------------------------
+% UNIVERSITY INFORMATION
+% --------------------------------------------------
 
 {\Large \textbf{\university}}
 
@@ -36,9 +110,9 @@ at (current page.south east)
 
 \vspace{2.2cm}
 
-% =========================
-% TÍTULO DEL TRABAJO
-% =========================
+% --------------------------------------------------
+% DOCUMENT TITLE
+% --------------------------------------------------
 
 \rule{\textwidth}{0.6pt}
 
@@ -52,27 +126,27 @@ at (current page.south east)
 
 \vspace{2.5cm}
 
-% =========================
-% INFORMACIÓN DEL TRABAJO
-% =========================
+% --------------------------------------------------
+% DOCUMENT INFORMATION
+% --------------------------------------------------
 
 \begin{tabular}{rl}
 \textbf{Autor:} & \documentauthor \\
 \\
 \textbf{Tutor:} & \supervisor \\
 \\
-\textbf{Departamento:} & \department \\
+\textbf{Asignatura:} & \subject \\
 \\
 \textbf{Curso académico:} & \academicyear
 \end{tabular}
 
 \vfill
 
-% =========================
-% FECHA
-% =========================
+% --------------------------------------------------
+% SUBMISSION DATE
+% --------------------------------------------------
 
-{\large \submissiondate}
+{\large \DocDate}
 
 \end{center}
 

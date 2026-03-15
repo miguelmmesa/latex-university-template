@@ -1,32 +1,224 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FILE: chapter03_escribir_contenido.tex
+%
+% PURPOSE
+% -------------------------------------------------------
+% Explains how to write the main content of the document
+% using the template structure.
+%
+%
+% ARCHITECTURE ROLE
+% -------------------------------------------------------
+% User guide chapter.
+%
+% Describes the workflow authors should follow when
+% writing documents with this template.
+%
+%
+% DEPENDENCIES
+% -------------------------------------------------------
+% environments.tex
+% listings
+%
+%
+% NOTES FOR DEVELOPERS
+% -------------------------------------------------------
+% This chapter explains how users should interact with
+% the template when writing content.
+%
+% It should not document template internals.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \chapter{Cómo escribir contenido}
 
-El contenido del documento se estructura mediante capítulos, secciones
-y subsecciones.
+El contenido principal del documento se escribe en la
+carpeta:
 
-\section{Capítulos}
+\texttt{02\_chapters}
 
-Los capítulos se crean utilizando el comando:
+Cada archivo dentro de esta carpeta representa un capítulo
+independiente del documento.
 
-\begin{lstlisting}[language=TeX,caption={Creación de un capítulo}]
+
+
+% --------------------------------------------------
+% ORGANIZACIÓN DE LOS CAPÍTULOS
+% --------------------------------------------------
+
+\section{Organización de los capítulos}
+
+Un capítulo se define mediante el comando:
+
+\begin{lstlisting}[caption={Creación de un capítulo},label={code:chapter}]
 \chapter{Titulo del capitulo}
 \end{lstlisting}
 
+\source{Plantilla}
+
+Cada capítulo debe almacenarse en un archivo independiente
+dentro de la carpeta \texttt{02\_chapters}.
+
+
+
+\begin{definitionbox}[Capítulo]
+Un capítulo es la unidad principal de organización
+del contenido dentro de un documento largo.
+\end{definitionbox}
+
+
+
+% --------------------------------------------------
+% SECCIONES
+% --------------------------------------------------
+
 \section{Secciones}
 
-Las secciones se crean mediante:
+Las secciones permiten dividir un capítulo en bloques
+temáticos.
 
-\begin{lstlisting}[language=TeX,caption={Creación de una sección}]
+\begin{lstlisting}[caption={Creación de una sección},label={code:section}]
 \section{Titulo de la seccion}
 \end{lstlisting}
 
-\subsection{Subsecciones}
+\source{Plantilla}
 
-Las subsecciones se crean mediante:
 
-\begin{lstlisting}[language=TeX,caption={Creacion de una subseccion}]
+
+% --------------------------------------------------
+% SUBSECCIONES
+% --------------------------------------------------
+
+\section{Subsecciones}
+
+Las subsecciones permiten organizar el contenido con
+mayor nivel de detalle.
+
+\begin{lstlisting}[caption={Creación de una subsección},label={code:subsection}]
 \subsection{Titulo de la subseccion}
 \end{lstlisting}
 
-\subsection{Ejemplo}
+\source{Plantilla}
 
-Este texto muestra cómo se visualizan las subsecciones dentro del documento.
+
+
+\begin{notebox}
+Se recomienda no utilizar más de tres niveles
+de profundidad en la estructura del documento
+para mantener la claridad del texto.
+\end{notebox}
+
+
+
+% --------------------------------------------------
+% EJEMPLO DE ESTRUCTURA
+% --------------------------------------------------
+
+\section{Ejemplo de estructura}
+
+Un capítulo típico puede organizarse de la siguiente forma.
+
+\begin{lstlisting}[caption={Estructura típica de un capítulo},label={code:chapterstructure}]
+\chapter{Introduccion}
+
+\section{Contexto}
+
+Texto introductorio.
+
+\section{Objetivos}
+
+\subsection{Objetivo general}
+
+Descripcion.
+
+\subsection{Objetivos especificos}
+
+Descripcion.
+\end{lstlisting}
+
+\source{Plantilla}
+
+
+
+% --------------------------------------------------
+% FLUJO DE ESCRITURA
+% --------------------------------------------------
+
+\section{Flujo de escritura recomendado}
+
+El flujo de trabajo recomendado al escribir un documento
+con esta plantilla es el siguiente.
+
+\begin{enumerate}
+
+\item Crear un archivo nuevo en la carpeta
+\texttt{02\_chapters}
+
+\item Añadir el capítulo en \texttt{main.tex}
+
+\item Escribir el contenido utilizando secciones
+y subsecciones
+
+\end{enumerate}
+
+
+
+\begin{lstlisting}[caption={Carga de capítulos en main.tex},label={code:chapters}]
+\input{02_chapters/chapter01}
+\input{02_chapters/chapter02}
+\input{02_chapters/chapter03}
+\end{lstlisting}
+
+\source{Plantilla}
+
+
+
+% --------------------------------------------------
+% BUENAS PRÁCTICAS DE ESCRITURA
+% --------------------------------------------------
+
+\section{Buenas prácticas de escritura}
+
+Para mantener la coherencia del documento se recomienda
+seguir estas prácticas.
+
+\begin{itemize}
+
+\item cada capítulo en un archivo independiente
+\item nombres de archivos descriptivos
+\item evitar capítulos excesivamente largos
+\item mantener una jerarquía clara de secciones
+
+\end{itemize}
+
+
+
+\begin{warningbox}
+Escribir todo el contenido directamente en
+\texttt{main.tex} rompe la arquitectura modular
+de la plantilla y dificulta el mantenimiento
+del documento.
+\end{warningbox}
+
+
+
+% --------------------------------------------------
+% EJEMPLO DE USO
+% --------------------------------------------------
+
+\section{Ejemplo}
+
+\begin{examplebox}
+Un documento típico puede contener capítulos como:
+
+Introducción
+
+Marco teórico
+
+Metodología
+
+Resultados
+
+Conclusiones
+\end{examplebox}

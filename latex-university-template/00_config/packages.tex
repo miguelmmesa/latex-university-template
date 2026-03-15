@@ -1,30 +1,88 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FILE: packages.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% PURPOSE
+% --------------
+% Loads all LaTeX packages required by the document template.
+%
+% This file centralizes package management so the template remains
+% modular and easy to maintain.
+%
+%
+% ARCHITECTURE ROLE
+% ---------------------------------
+% Part of the configuration layer of the template.
+%
+% Responsibilities:
+%   - Load packages
+%   - Configure package-specific settings
+%   - Define bibliography configuration
+%
+% It MUST NOT contain:
+%   - document layout logic
+%   - typography rules
+%   - visual styles
+%
+% Those belong to:
+%   07_styles/
+%
+%
+% DEPENDENCIES
+% ------------------------
+% Used by:
+%   main.tex
+%
+% Requires:
+%   bibliography file
+%   05_bibliography/references.bib
+%
+%
+% NOTES FOR DEVELOPERS
+% ---------------------------------------
+% Package order can affect compilation.
+% In particular:
+%
+%   hyperref should be loaded near the end
+%   cleveref should be loaded after hyperref
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 % =====================================================
-% IDIOMA Y CODIFICACIÓN
+% LANGUAGE AND ENCODING
 % =====================================================
 
 \usepackage[spanish]{babel}
 
-\usepackage[utf8]{inputenc}
-
 \usepackage[T1]{fontenc}
 
-% =====================================================
-% IMAGEN OVERLAY
-% =====================================================
+\usepackage[utf8]{inputenc}
 
-
-\usepackage{tikz}
+% (Optional for modern compilers)
+\usepackage[utf8]{inputenc}
 
 
 % =====================================================
-% MATEMÁTICAS
+% ENVIROMENTS
+% =====================================================
+
+\usepackage{float}
+
+\usepackage[most]{tcolorbox}
+
+\usepackage{verbatim}
+
+
+% =====================================================
+% MATHEMATICS
 % =====================================================
 
 \usepackage{amsmath}
 
 
 % =====================================================
-% GRÁFICOS Y TABLAS
+% GRAPHICS AND TABLES
 % =====================================================
 
 \usepackage{graphicx}
@@ -33,47 +91,37 @@
 
 
 % =====================================================
-% CITAS Y BIBLIOGRAFÍA APA
+% OVERLAY GRAPHICS
 % =====================================================
 
-\usepackage{csquotes}
-
-\usepackage[
-backend=biber,
-style=apa,
-sorting=nyt
-]{biblatex}
-
-\DeclareLanguageMapping{spanish}{spanish-apa}
-
-\addbibresource{05_bibliography/references.bib}
+\usepackage{tikz}
 
 
 % =====================================================
-% CÓDIGO FUENTE
+% SOURCE CODE
 % =====================================================
 
 \usepackage{listings}
 \usepackage{xcolor}
 
-% Cambiar nombres del entorno listings
+% Rename listings environments (Spanish)
 \renewcommand{\lstlistingname}{Código}
 \renewcommand{\lstlistlistingname}{Lista de códigos}
 
+
 % =====================================================
-% ALGORITMOS
+% ALGORITHMS
 % =====================================================
 
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 
-% Cambiar nombres del entorno algoritmos
 \floatname{algorithm}{Algoritmo}
 \renewcommand{\listalgorithmname}{Lista de algoritmos}
 
 
 % =====================================================
-% FIGURAS
+% FIGURE CAPTIONS
 % =====================================================
 
 \usepackage{caption}
@@ -86,7 +134,7 @@ sorting=nyt
 
 
 % =====================================================
-% ACRÓNIMOS
+% ACRONYMS
 % =====================================================
 
 \usepackage{acro}
@@ -98,7 +146,24 @@ sorting=nyt
 
 
 % =====================================================
-% HIPERVÍNCULOS
+% CITATIONS AND BIBLIOGRAPHY (APA)
+% =====================================================
+
+\usepackage{csquotes}
+
+\usepackage[
+backend=biber,
+style=apa,
+sorting=nyt
+]{biblatex}
+
+\DeclareLanguageMapping{spanish}{spanish-apa}
+
+\addbibresource{04_bibliography/references.bib}
+
+
+% =====================================================
+% HYPERLINKS
 % =====================================================
 
 \usepackage{hyperref}
@@ -106,8 +171,10 @@ sorting=nyt
 \hypersetup{
     pdftitle={\documenttitle},
     pdfauthor={\documentauthor},
+    pdfcreator={mammesa},
+    pdfproducer={mammesa},
     pdfsubject={Trabajo Fin de Grado},
-    pdfkeywords={TFG, investigación},
+    pdfkeywords={Plantilla,LaTeX},
     colorlinks=true,
     linkcolor=black,
     citecolor=black,
@@ -116,7 +183,16 @@ sorting=nyt
 
 
 % =====================================================
-% REFERENCIAS INTELIGENTES
+% INTELLIGENT REFERENCES
 % =====================================================
 
 \usepackage{cleveref}
+
+
+% =====================================================
+% PRECISE TIMESTAMP USE
+% =====================================================
+
+\usepackage{datetime2}
+
+\typeout{mammesa-template-loaded}

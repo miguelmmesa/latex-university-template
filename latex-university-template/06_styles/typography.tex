@@ -1,0 +1,79 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FILE: typography.tex
+%
+% PURPOSE
+% ---------------------------------
+% Defines the typographic configuration of the document.
+%
+% This includes:
+%   - font family
+%   - microtypographic improvements
+%   - line spacing
+%
+%
+% ARCHITECTURE ROLE
+% ---------------------------------
+% Part of the style layer of the template.
+%
+% Responsible ONLY for visual typographic behaviour.
+% It must NOT define document metadata or layout logic.
+%
+%
+% DEPENDENCIES
+% ---------------------------------
+% 00_config/config.tex
+% 00_config/packages.tex
+%
+%
+% NOTES FOR DEVELOPERS
+% ---------------------------------
+% Do not place document content here.
+%
+% Changes in this file affect the entire document
+% typography and readability.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% --------------------------------------------------
+% FONT FAMILY
+% --------------------------------------------------
+
+% Latin Modern font family
+% Professional extension of Computer Modern
+
+\usepackage{lmodern}
+
+% Other popular font options:
+%\usepackage{times}
+%\usepackage{helvet}
+
+
+
+% --------------------------------------------------
+% MICROTYPOGRAPHY
+% --------------------------------------------------
+
+% Improves character protrusion, kerning and spacing
+% Produces more professional looking text blocks
+
+\usepackage{microtype}
+
+\microtypesetup{
+    protrusion=true,
+    expansion=true
+}
+
+
+
+% --------------------------------------------------
+% LINE SPACING
+% --------------------------------------------------
+
+% Academic documents usually require 1.5 spacing.
+% Controlled through config.tex for flexibility.
+
+\usepackage{setspace}
+
+%\setstretch{\documentlinespacing}
+

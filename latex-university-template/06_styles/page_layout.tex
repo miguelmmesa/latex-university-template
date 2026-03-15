@@ -1,0 +1,96 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FILE: page_layout.tex
+%
+% PURPOSE
+% ---------------------------------
+% Defines the page layout configuration of the document.
+%
+% This includes:
+%   - page margins
+%   - header and footer layout
+%   - page numbering style
+%
+%
+% ARCHITECTURE ROLE
+% ---------------------------------
+% Part of the visual style layer of the template.
+%
+% Responsible for controlling how content is positioned
+% on the page, but NOT for typographic configuration.
+%
+%
+% DEPENDENCIES
+% ---------------------------------
+% 00_config/config.tex
+% 00_config/packages.tex
+%
+%
+% NOTES FOR DEVELOPERS
+% ---------------------------------
+% Changing this file will affect the global layout
+% of the document.
+%
+% Margin settings may need adjustment depending on
+% institutional formatting requirements.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% --------------------------------------------------
+% PAGE GEOMETRY
+% --------------------------------------------------
+
+% Controls page margins and printable area
+
+\usepackage[
+a4paper,
+left=3cm,
+right=2.5cm,
+top=2.5cm,
+bottom=2.5cm,
+bindingoffset=0.5cm
+]{geometry}
+
+
+
+% --------------------------------------------------
+% HEADERS AND FOOTERS
+% --------------------------------------------------
+
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+
+\setlength{\headheight}{16pt}
+
+
+
+% --------------------------------------------------
+% HEADER / FOOTER CONTENT
+% --------------------------------------------------
+
+\fancyhf{}
+
+% Left header → chapter title
+\fancyhead[L]{\leftmark}
+
+% Right header → page number
+\fancyhead[R]{\thepage}
+
+\renewcommand{\headrulewidth}{0.4pt}
+
+
+
+% --------------------------------------------------
+% CHAPTER PAGE STYLE
+% --------------------------------------------------
+
+% Ensures chapter opening pages follow the same style
+
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyhead[L]{\leftmark}
+    \fancyhead[R]{\thepage}
+    \renewcommand{\headrulewidth}{0.4pt}
+}

@@ -1,37 +1,253 @@
-\chapter{Acrónimos y citas}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FILE: chapter06_referencias.tex
+%
+% PURPOSE
+% -------------------------------------------------------
+% Explains how to manage acronyms and bibliographic
+% references using the template.
+%
+%
+% ARCHITECTURE ROLE
+% -------------------------------------------------------
+% User guide chapter.
+%
+% Documents the use of the acro package for acronyms
+% and biblatex for bibliographic references.
+%
+%
+% DEPENDENCIES
+% -------------------------------------------------------
+% 07_acronyms/acronyms.tex
+% biblatex
+% acro
+%
+%
+% NOTES FOR DEVELOPERS
+% -------------------------------------------------------
+% If the citation style or acronym system changes,
+% this chapter must be updated.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\chapter{Acrónimos y bibliografía}
+
+Los documentos académicos utilizan con frecuencia
+acrónimos y referencias bibliográficas.
+
+Esta plantilla proporciona un sistema automatizado
+para gestionar ambos elementos.
+
+
+
+% --------------------------------------------------
+% ACRÓNIMOS
+% --------------------------------------------------
 
 \section{Acrónimos}
 
-Los acrónimos se gestionan mediante el paquete \texttt{acro}.
+\begin{definitionbox}[Acrónimo]
+Un acrónimo es una abreviatura formada por las
+iniciales de una expresión compuesta.
 
-Por ejemplo, el acrónimo \ac{api} se expande automáticamente la primera vez
-que aparece en el texto.
+Por ejemplo: API (Application Programming Interface).
+\end{definitionbox}
 
-Esto sucede porque se inserta el código:
-\begin{lstlisting}[language=TeX,caption={Ejemplo nuevo acrónimo}]
+Los acrónimos del documento se definen en el archivo:
+
+\texttt{07\_acronyms/acronyms.tex}
+
+
+
+% --------------------------------------------------
+% DEFINICIÓN DE ACRÓNIMOS
+% --------------------------------------------------
+
+\section{Definición de acrónimos}
+
+Un acrónimo se define mediante el comando:
+
+\begin{lstlisting}[caption={Definición de acrónimo},label={code:acronymdef}]
 \DeclareAcronym{api}{
-    short = API ,
-    long  = Application Programming Interface 
+  short = API ,
+  long  = Application Programming Interface
 }
-\end{lstlisting} 
-
-en la carpeta: 
-\begin{lstlisting}[language=TeX,caption={Carpeta Acrónimos}]
-\08_acronyms 
 \end{lstlisting}
 
-\section{Citas bibliográficas}
+\source{Plantilla}
 
-Las referencias bibliográficas se gestionan mediante \texttt{biblatex}.
 
-Ejemplo de cita narrativa:
 
-\begin{lstlisting}[language=TeX,caption={Cita narrativa}]
-\textcite{knuth1984}
+% --------------------------------------------------
+% USO DE ACRÓNIMOS
+% --------------------------------------------------
+
+\section{Uso de acrónimos}
+
+Una vez definido el acrónimo, puede utilizarse
+en el documento mediante el comando:
+
+\begin{lstlisting}[caption={Uso de acrónimos},label={code:acronymuse}]
+\ac{api}
 \end{lstlisting}
 
-Ejemplo de cita parentética:
+\source{Plantilla}
 
-\begin{lstlisting}[language=TeX,caption={Cita parentética}]
-\parencite{knuth1984}
+
+
+La primera vez que aparece el acrónimo en el documento,
+se mostrará de la siguiente forma:
+
+\begin{examplebox}
+\ac{api}
+\end{examplebox}
+
+En las siguientes apariciones, el sistema utilizará
+únicamente la versión corta.
+
+Por ejemplo:
+
+\begin{examplebox}
+Las \ac{api} permiten que diferentes aplicaciones
+se comuniquen entre sí.
+\end{examplebox}
+
+
+
+\begin{notebox}
+La lista completa de acrónimos se genera automáticamente
+mediante el comando:
+
+\texttt{\textbackslash printacronyms}
+\end{notebox}
+
+
+
+% --------------------------------------------------
+% BIBLIOGRAFÍA
+% --------------------------------------------------
+
+\section{Bibliografía}
+
+Las referencias bibliográficas se gestionan mediante
+el paquete \texttt{biblatex}.
+
+
+
+\begin{definitionbox}[Referencia bibliográfica]
+Una referencia bibliográfica identifica una fuente
+utilizada en un documento académico, como un libro,
+artículo científico o página web.
+\end{definitionbox}
+
+
+
+Las referencias se almacenan en el archivo:
+
+\texttt{04\_bibliography/references.bib}
+
+
+
+% --------------------------------------------------
+% EJEMPLO DE REFERENCIA
+% --------------------------------------------------
+
+\section{Definición de referencias}
+
+Una referencia bibliográfica puede definirse de la
+siguiente forma:
+
+\begin{lstlisting}[caption={Ejemplo de referencia BibTeX},label={code:bibexample}]
+@book{knuth1984,
+  author = {Donald E. Knuth},
+  title = {The TeXbook},
+  year = {1984},
+  publisher = {Addison-Wesley}
+}
 \end{lstlisting}
+
+\source{Plantilla}
+
+
+
+% --------------------------------------------------
+% CITAS EN EL TEXTO
+% --------------------------------------------------
+
+\section{Citas en el texto}
+
+Una vez definida la referencia, puede citarse en
+el documento mediante el comando:
+
+\begin{lstlisting}[caption={Cita en el texto},label={code:cite}]
+\cite{knuth1984}
+\end{lstlisting}
+
+\source{Plantilla}
+
+
+
+Ejemplo dentro del texto:
+
+\begin{examplebox}
+El sistema tipográfico \TeX{} fue desarrollado por
+Donald Knuth \cite{knuth1984}.
+\end{examplebox}
+
+
+
+% --------------------------------------------------
+% GENERACIÓN DE LA BIBLIOGRAFÍA
+% --------------------------------------------------
+
+\section{Generación de la bibliografía}
+
+La bibliografía completa del documento se genera
+automáticamente mediante el comando:
+
+\begin{lstlisting}[caption={Generación de bibliografía},label={code:bibliography}]
+\printbibliography
+\end{lstlisting}
+
+\source{Plantilla}
+
+
+
+Este comando se encuentra normalmente al final del
+documento.
+
+
+
+\begin{warningbox}
+Si no se utiliza el compilador \texttt{biber},
+las referencias bibliográficas no se generarán
+correctamente.
+\end{warningbox}
+
+
+
+% --------------------------------------------------
+% VENTAJAS DEL SISTEMA
+% --------------------------------------------------
+
+\section{Ventajas del sistema}
+
+El uso de \texttt{biblatex} y \texttt{acro} ofrece
+varias ventajas:
+
+\begin{itemize}
+
+\item generación automática de listas
+\item formato consistente
+\item reutilización de referencias
+\item mantenimiento sencillo de grandes documentos
+
+\end{itemize}
+
+
+
+\begin{examplebox}
+Este sistema permite gestionar decenas o incluso
+cientos de referencias bibliográficas sin perder
+consistencia en el documento.
+\end{examplebox}

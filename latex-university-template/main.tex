@@ -1,101 +1,210 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FILE: main.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% PURPOSE
+% --------------
+% Main entry point of the LaTeX project.
+% This file orchestrates the compilation of the entire document.
+%
+% It loads:
+%   - Global configuration
+%   - Required packages
+%   - Document style modules
+%   - Acronym definitions
+%   - Frontmatter elements
+%   - Chapters
+%   - Bibliography
+%   - Appendices
+%
+%
+% ARCHITECTURE ROLE
+% ---------------------------------
+% This file acts as the central controller of the document build process.
+%
+% It does NOT define:
+%   - layout logic
+%   - typography
+%   - macros
+%
+% Those responsibilities belong to the files located in:
+%
+%   00_config/
+%   07_styles/
+%
+%
+% DEPENDENCIES
+% ------------
+%
+% Configuration
+%   00_config/config.tex
+%   00_config/packages.tex
+%
+% Styles
+%   07_styles/*
+%
+% Frontmatter
+%   01_frontmatter/*
+%
+% Content
+%   02_chapters/*
+%
+% Bibliography
+%   05_bibliography/*
+%
+% Appendices
+%   06_appendices/*
+%
+%
+% NOTES FOR DEVELOPERS
+% --------------------
+%
+% Do NOT place document content directly in this file.
+%
+% Content should always be placed in:
+%   02_chapters/
+%
+% This file should only orchestrate the structure of the document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \documentclass[12pt,a4paper,openright]{report}
 
-% =========================
-% CONFIGURACIÓN GENERAL
-% =========================
+
+% ==================================================
+% GLOBAL CONFIGURATION
+% ==================================================
+%
+% Document metadata and global parameters.
 
 \input{00_config/config}
+
+% ==================================================
+% PACKAGES
+% ==================================================
+%
+% Load all LaTeX packages first. Packages define the
+% commands that may be used later in configuration
+% or style files.
+
 \input{00_config/packages}
 
-% =========================
-% ESTILOS DEL DOCUMENTO
-% =========================
 
-\input{07_styles/typography}
-\input{07_styles/page_layout}
-\input{07_styles/headings}
-\input{07_styles/figures_tables}
-\input{07_styles/code_style}
+% ==================================================
+% DOCUMENT STYLE MODULES
+% ==================================================
+%
+% Visual and formatting configuration.
 
-% =========================
-% ACRÓNIMOS
-% =========================
+\input{06_styles/typography}
+\input{06_styles/page_layout}
+\input{06_styles/headings}
+\input{06_styles/figures_tables}
+\input{06_styles/code_style}
+\input{06_styles/environments}
 
-\input{08_acronyms/acronyms}
+% ==================================================
+% ACRONYMS
+% ==================================================
 
-% =========================
-% INICIO DEL DOCUMENTO
-% =========================
+\input{07_acronyms/acronyms}
+
+% ==================================================
+% DOCUMENT START
+% ==================================================
 
 \begin{document}
 
 
-% == Portada ==============
+
+
+% ==================================================
+% COVER PAGE
+% ==================================================
+
 \input{01_frontmatter/cover}
 \cleardoublepage
 
-% =========================
+
+
+% ==================================================
 % FRONTMATTER
-% =========================
+% ==================================================
+%
+% Preliminary pages of the document.
+
+
+% Dedication
+\input{01_frontmatter/dedication}
+\cleardoublepage
+
 
 \pagenumbering{roman}
 
-% Activar según necesidades del trabajo
-% -------------------------------------
 
-% == Dedicación ===========
-%\input{01_frontmatter/dedication}
-%\cleardoublepage
+% --------------------------------------------------
+% OPTIONAL SECTIONS
+% --------------------------------------------------
 
-% == Reconocimientos ======
-%\input{01_frontmatter/acknowledgements}
-%\cleardoublepage
+% Acknowledgements
+\input{01_frontmatter/acknowledgements}
+\cleardoublepage
 
-% == Resumen ==============
-%\input{01_frontmatter/resumen}
-%\cleardoublepage
+% Spanish abstract
+\input{01_frontmatter/resumen}
+\cleardoublepage
 
-% == Abstract =============
-%\input{01_frontmatter/abstract}
-%\cleardoublepage
-
-% -------------------------------------
-
-% =========================
-% ÍNDICES
-% =========================
+% English abstract
+\input{01_frontmatter/abstract}
+\cleardoublepage
 
 
-% == Índice ===============
+
+% ==================================================
+% TABLES OF CONTENT
+% ==================================================
+
 \tableofcontents
 \cleardoublepage
 
-% == Listado Figuras ======
+
+ %List of figures
 \listoffigures
 \cleardoublepage
 
-% == Listado Tablas =======
+
+ %List of tables
 \listoftables
 \cleardoublepage
 
-% == Listado Código =======
+
+ %List of code listings
 \lstlistoflistings
 \cleardoublepage
 
-% == Listado Algoritmos ===
+
+% List of algorithms
 \listofalgorithms
 \cleardoublepage
 
-% == Listado Acrónimos ====
+
+% Acronym list
 \printacronyms
 \cleardoublepage
 
 
-% =========================
-% MAINMATTER
-% =========================
+
+% ==================================================
+% MAIN CONTENT
+% ==================================================
 
 \pagenumbering{arabic}
+
+
+% --------------------------------------------------
+% CHAPTERS
+% --------------------------------------------------
 
 \input{02_chapters/chapter01}
 \cleardoublepage
@@ -118,19 +227,33 @@
 \input{02_chapters/chapter07}
 \cleardoublepage
 
-% =========================
-% BIBLIOGRAFÍA
-% =========================
+\input{02_chapters/chapter08}
+\cleardoublepage
+
+\input{02_chapters/chapter09}
+\cleardoublepage
+
+\input{02_chapters/chapter10}
+\cleardoublepage
+
+
+% ==================================================
+% BIBLIOGRAPHY
+% ==================================================
 
 \printbibliography
 \cleardoublepage
 
-% =========================
-% ANEXOS
-% =========================
+
+
+% ==================================================
+% APPENDICES
+% ==================================================
 
 \appendix
 
-\input{06_appendices/appendixA}
+\input{05_appendices/appendixA}
+
+
 
 \end{document}
